@@ -4,12 +4,14 @@
     <Header></Header>
     <Product
       v-for="product of products"
+      v-scroll-reveal
       :key="product.title"
       :img="product.img"
       :title="product.title"
       :caption="product.caption"
       :color="product.color"
     />
+    <Footer></Footer>
     <!-- <Product
       :key="products[currentProduct].title"
       :img="products[currentProduct].img"
@@ -25,7 +27,8 @@
 <script>
 import Product from "./components/Product.vue";
 import Header from "./components/Header.vue";
-import NavBar from "./components/NavBar.vue"
+import NavBar from "./components/NavBar.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
@@ -100,7 +103,8 @@ export default {
   components: {
     Product,
     Header,
-    NavBar
+    NavBar,
+    Footer
   },
 };
 </script>
@@ -116,6 +120,12 @@ export default {
   src: url("./assets/fonts/Nightingale.woff2") format("woff2"),
     url("./assets/fonts/Nightingale.woff") format("woff");
 }
+
+body {
+  width: 102vw;
+  margin-left: -1vw;
+  overflow-x: hidden;
+}
 #app {
   width: 100%;
   overflow-x: hidden;
@@ -125,5 +135,22 @@ export default {
   text-align: center;
   align-content: center;
   position: relative;
+}
+
+a {
+  color: #AE841F;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ae965d;
+}
+
+a:visited {
+  color: #AE841F;
+}
+
+a:active {
+  color: #AE841F;
 }
 </style>
