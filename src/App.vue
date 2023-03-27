@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <NavBar></NavBar>
     <Header></Header>
     <Product
       v-for="product of products"
@@ -24,6 +25,7 @@
 <script>
 import Product from "./components/Product.vue";
 import Header from "./components/Header.vue";
+import NavBar from "./components/NavBar.vue"
 
 export default {
   name: "App",
@@ -98,6 +100,7 @@ export default {
   components: {
     Product,
     Header,
+    NavBar
   },
 };
 </script>
@@ -121,5 +124,6 @@ export default {
   flex-direction: column;
   text-align: center;
   align-content: center;
+  position: relative;
 }
 </style>
