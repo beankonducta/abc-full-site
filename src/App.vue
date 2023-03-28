@@ -4,12 +4,13 @@
     <Header></Header>
     <Product
       v-for="product of products"
-      v-scroll-reveal
       :key="product.title"
       :img="product.img"
       :title="product.title"
       :caption="product.caption"
       :color="product.color"
+      :bg="product.bg"
+      :scrollY="scrollY"
     />
     <Footer></Footer>
     <!-- <Product
@@ -86,6 +87,7 @@ export default {
           bg: "#B2E1D8",
         },
       ],
+      scrollY: 0,
     };
   },
   methods: {
@@ -99,12 +101,22 @@ export default {
       if (this.currentProduct < 0)
         this.currentProduct = this.products.length - 1;
     },
+    handleScroll(event) {
+      this.scrollY = event.currentTarget.scrollY
+      console.log(this.scrollY)
+    },
   },
   components: {
     Product,
     Header,
     NavBar,
-    Footer
+    Footer,
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  unmounted() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
@@ -126,10 +138,11 @@ body {
   margin-left: -1vw;
   overflow-x: hidden;
 }
+
 #app {
   width: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -138,7 +151,7 @@ body {
 }
 
 a {
-  color: #AE841F;
+  color: #ae841f;
   text-decoration: none;
 }
 
@@ -147,10 +160,10 @@ a:hover {
 }
 
 a:visited {
-  color: #AE841F;
+  color: #ae841f;
 }
 
 a:active {
-  color: #AE841F;
+  color: #ae841f;
 }
 </style>

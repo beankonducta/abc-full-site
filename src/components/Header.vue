@@ -31,7 +31,7 @@ export default {
   overflow: hidden;
   margin: 0 auto;
   text-align: center;
-  padding-bottom: 100px;
+  padding-bottom: 20%;
 }
 #inner {
   margin-top: 5%;

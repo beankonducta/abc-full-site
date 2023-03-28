@@ -1,9 +1,17 @@
 <template>
-  <div class="product">
+  <div
+    class="product fade"
+    :ref="title"
+    :class="{ visible: isVisible }"
+    :style="{ background: bg }"
+  >
     <div class="product-wrapper" id="products">
       <div class="title" :style="{ color: color }">{{ title }}</div>
       <img class="image" v-bind:src="img" />
       <div class="caption" :color="color">{{ caption }}</div>
+    </div>
+    <div class="cocktail" :style="{left: cocktailX, background: this.color, color: this.bg }">
+      test
     </div>
   </div>
 </template>
@@ -17,7 +25,41 @@ export default {
     title: String,
     caption: String,
     color: String,
+    bg: String,
+    scrollY: Number
   },
+  data() {
+    return {
+      isVisible: false,
+      yPos: 0
+    };
+  },
+  mounted() {
+    this.yPos = this.$refs[this.title].getBoundingClientRect().y + document.documentElement.scrollTop
+    console.log(this.yPos)
+    const options = {
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+    const observer = new IntersectionObserver(this.handleIntersect, options);
+    observer.observe(this.$el);
+  },
+  methods: {
+    handleIntersect(entries) {
+      const entry = entries[0];
+      this.isVisible = entry.isIntersecting;
+    },
+  },
+  computed: {
+    yOffset() {
+      return this.scrollY - this.yPos
+    },
+    cocktailX() {
+      let x = this.yOffset
+      let p = x / 7;
+      return p >= 0? "0%" : p+"%";
+    }
+  }
 };
 </script>
 
@@ -39,12 +81,36 @@ export default {
 .title {
   font-size: calc(1rem + 4vw);
   font-family: "BNMainz";
+  text-transform: uppercase;
 }
 .image {
   width: 60%;
 }
 .caption {
-  font-size: calc(.7rem + 1vw);
+  font-size: calc(0.7rem + 1vw);
   font-family: "Nightingale";
+  text-transform: uppercase;
+}
+
+.fade {
+  opacity: 0;
+  transition: 0.5s opacity ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.cocktail {
+  width: 30%;
+  height: 50%;
+  position: absolute;
+  top: 25%;
+  left: -30%;
+  border-radius: 0% 5% 5% 0%;
+  box-shadow: -2px 5px 10px rgba(0, 0, 0, .2);
+  font-size: calc(0.7rem + 1vw);
+  font-family: "Nightingale";
+  text-transform: uppercase;
 }
 </style>
