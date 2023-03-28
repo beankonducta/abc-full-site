@@ -2,15 +2,15 @@
   <div
     class="product fade"
     :ref="title"
-    :class="{ visible: isVisible }"
+    :class="[{ visible: isVisible }]"
     :style="{ background: bg }"
-  >
+  > {{ yOffset }}
     <div class="product-wrapper" id="products">
       <div class="title" :style="{ color: color }">{{ title }}</div>
-      <img class="image" v-bind:src="img" />
+      <img class="image slide-in-can" v-bind:src="img" />
       <div class="caption" :color="color">{{ caption }}</div>
     </div>
-    <div class="cocktail" :style="{left: cocktailX, background: this.color, color: this.bg }">
+    <div class="cocktail" :style="{ background: this.color, color: this.bg }" :class="isVisible ? 'slide-in' : 'slide-out'">
       <div class="cocktail-header">
         about
       </div>
@@ -47,7 +47,6 @@ export default {
   },
   mounted() {
     this.yPos = this.$refs[this.title].getBoundingClientRect().y + document.documentElement.scrollTop
-    console.log(this.yPos)
     const options = {
       rootMargin: "0px",
       threshold: 0.1,
@@ -69,6 +68,11 @@ export default {
       let x = this.yOffset
       let p = x / 7;
       return p >= 0? "0%" : p+"%";
+    },
+    imageX() {
+      let x = this.yOffset
+      let p = x / 7;
+      return p >= 0? "0%" : p * -1+"%";
     }
   }
 };
@@ -137,9 +141,74 @@ export default {
 }
 
 .cocktail-body {
-  padding: 1vh;
+  padding: 2vh;
   font-size: calc(0.7rem + 1vw);
   font-family: "Nightingale";
   text-transform: uppercase;
+}
+
+.slide-in, .slide-in-can {
+  animation: slide-in 2s forwards;
+}
+
+.slide-out, .slide-out-can {
+  animation: slide-out 2s forwards;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+@keyframes slide-in {
+  100% {
+    left: 1.5%;
+  }
+}
+
+@-webkit-keyframes slide-in {
+  100% {
+    left: 1.5%;
+  }
+}
+
+@keyframes slide-out {
+  100% {
+    left: -30%;
+  }
+}
+
+@-webkit-keyframes slide-out {
+  100% {
+    left: -30%;
+  }
+}
+
+@keyframes slide-in-can {
+  100% {
+    margin-right: 0%;
+  }
+}
+
+@-webkit-keyframes slide-in-can {
+  100% {
+    margin-right: 0%;
+  }
+}
+
+@keyframes slide-out-can {
+  100% {
+    margin-right: 100%;
+  }
+}
+
+@-webkit-keyframes slide-out-can {
+  100% {
+    margin-right: 100%;
+  }
 }
 </style>
