@@ -21,7 +21,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .nav {
-  text-align: right;
+  text-align: center;
   margin-right: 3vw;
   margin-top: 1vh;
   margin-bottom: 1vh;
@@ -29,13 +29,6 @@ export default {
   font-family: "Nightingale";
   text-transform: uppercase;
   color: #AE841F;
-}
-
-@media (max-width: 1000px) {
-  .nav {
-    margin: 5vw;
-    text-align: center;
-  }
 }
 
 .nav-item {

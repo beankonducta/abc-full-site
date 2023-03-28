@@ -1,11 +1,10 @@
 <template>
   <div
-    class="product fade"
+    class="product"
     :ref="title"
-    :class="[{ visible: isVisible }]"
     :style="{ background: bg }"
-  > {{ yOffset }}
-    <div class="product-wrapper" id="products">
+  >
+    <div class="product-wrapper fade" id="products" :class="[{ visible: isVisible }]">
       <div class="title" :style="{ color: color }">{{ title }}</div>
       <img class="image slide-in-can" v-bind:src="img" />
       <div class="caption" :color="color">{{ caption }}</div>

@@ -2,11 +2,7 @@
   <div class="header">
       <div id="inner">
         <img id="header-logo" :src="require('@/assets/images/logo.svg')" />
-        <div id="squiggle-container">
-          <div id="squiggle"></div>
-        </div>
         <div id="about-container">
-          <img id="about-text" :src="require('@/assets/images/about.svg')" />
           <object
             id="elder-flower"
             type="image/svg+xml"
@@ -28,6 +24,7 @@ export default {
 <style scoped>
 .header {
   width: 80%;
+  height: 100%;
   overflow: hidden;
   margin: 0 auto;
   text-align: center;
