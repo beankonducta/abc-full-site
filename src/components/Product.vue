@@ -11,7 +11,18 @@
       <div class="caption" :color="color">{{ caption }}</div>
     </div>
     <div class="cocktail" :style="{left: cocktailX, background: this.color, color: this.bg }">
-      test
+      <div class="cocktail-header">
+        about
+      </div>
+      <div class="cocktail-body">
+        this is made with really yummy ingredients we promise you're gonna really love it
+      </div>
+      <div class="cocktail-header">
+        cocktail idea
+      </div>
+      <div class="cocktail-body">
+        2oz gin, 1oz lemon, 1oz sugar. shake ingredients and pour over crushed ice, top with 6oz mellona
+      </div>
     </div>
   </div>
 </template>
@@ -109,6 +120,24 @@ export default {
   left: -30%;
   border-radius: 0% 5% 5% 0%;
   box-shadow: -2px 5px 10px rgba(0, 0, 0, .2);
+  font-size: calc(0.7rem + 1vw);
+  font-family: "Nightingale";
+  text-transform: uppercase;
+}
+
+.cocktail a {
+  padding-top: 2vh;
+}
+
+.cocktail-header {
+  padding-top: 1vh;
+  font-size: calc(1rem + 2vw);
+  font-family: "BNMainz";
+  text-transform: uppercase;
+}
+
+.cocktail-body {
+  padding: 1vh;
   font-size: calc(0.7rem + 1vw);
   font-family: "Nightingale";
   text-transform: uppercase;
