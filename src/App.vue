@@ -3,7 +3,7 @@
     <NavBar></NavBar>
     <Header></Header>
     <Product
-      v-for="product of products"
+      v-for="(product, index) in products"
       :key="product.title"
       :img="product.img"
       :title="product.title"
@@ -11,6 +11,7 @@
       :color="product.color"
       :bg="product.bg"
       :scrollY="scrollY"
+      :arrowColor="index > 0 ? products[index - 1].bg : 'white'"
     />
     <Footer></Footer>
     <!-- <Product

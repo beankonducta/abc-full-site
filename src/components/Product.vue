@@ -1,26 +1,45 @@
 <template>
-  <div
-    class="product"
-    :ref="title"
-    :style="{ background: bg }"
-  >
-    <div class="product-wrapper fade" id="products" :class="[{ visible: isVisible }]">
+  <div class="product" :ref="title" :style="{ background: bg }">
+    <svg
+      version="1.1"
+      class="arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 144 48.95"
+      style="enable-background: new 0 0 144 48.95"
+      xml:space="preserve"
+    >
+      <path
+        :fill="arrowColor"
+        d="M2.66,0.25C29.78,6.92,53.5,24.17,70.43,48.11c0.79,1.12,2.4,1.12,3.19,0c16.96-23.98,40.73-41.25,67.89-47.9
+	C142.07,0.11,142.92,0,144,0H0C1.2,0,2.12,0.14,2.66,0.25z"
+      />
+    </svg>
+    <div
+      class="product-wrapper fade"
+      id="products"
+      :class="[{ visible: isVisible }]"
+    >
       <div class="title" :style="{ color: color }">{{ title }}</div>
       <img class="image slide-in-can" v-bind:src="img" />
       <div class="caption" :color="color">{{ caption }}</div>
     </div>
-    <div class="cocktail" :style="{ background: this.color, color: this.bg }" :class="isVisible ? 'slide-in' : 'slide-out'">
-      <div class="cocktail-header">
-        about
-      </div>
+    <div
+      class="cocktail"
+      :style="{ background: this.color, color: this.bg }"
+      :class="isVisible ? 'slide-in' : 'slide-out'"
+    >
+      <div class="cocktail-header">about</div>
       <div class="cocktail-body">
-        this is made with really yummy ingredients we promise you're gonna really love it
+        this is made with really yummy ingredients we promise you're gonna
+        really love it
       </div>
-      <div class="cocktail-header">
-        cocktail idea
-      </div>
+      <div class="cocktail-header">cocktail idea</div>
       <div class="cocktail-body">
-        2oz gin, 1oz lemon, 1oz sugar. shake ingredients and pour over crushed ice, top with 6oz mellona
+        2oz gin, 1oz lemon, 1oz sugar. shake ingredients and pour over crushed
+        ice, top with 6oz mellona
       </div>
     </div>
   </div>
@@ -36,16 +55,19 @@ export default {
     caption: String,
     color: String,
     bg: String,
-    scrollY: Number
+    scrollY: Number,
+    arrowColor: String
   },
   data() {
     return {
       isVisible: false,
-      yPos: 0
+      yPos: 0,
     };
   },
   mounted() {
-    this.yPos = this.$refs[this.title].getBoundingClientRect().y + document.documentElement.scrollTop
+    this.yPos =
+      this.$refs[this.title].getBoundingClientRect().y +
+      document.documentElement.scrollTop;
     const options = {
       rootMargin: "0px",
       threshold: 0.1,
@@ -61,19 +83,19 @@ export default {
   },
   computed: {
     yOffset() {
-      return this.scrollY - this.yPos
+      return this.scrollY - this.yPos;
     },
     cocktailX() {
-      let x = this.yOffset
+      let x = this.yOffset;
       let p = x / 7;
-      return p >= 0? "0%" : p+"%";
+      return p >= 0 ? "0%" : p + "%";
     },
     imageX() {
-      let x = this.yOffset
+      let x = this.yOffset;
       let p = x / 7;
-      return p >= 0? "0%" : p * -1+"%";
-    }
-  }
+      return p >= 0 ? "0%" : p * -1 + "%";
+    },
+  },
 };
 </script>
 
@@ -117,12 +139,11 @@ export default {
 
 .cocktail {
   width: 30%;
-  height: 50%;
   position: absolute;
   top: 25%;
   left: -30%;
-  border-radius: 0% 5% 5% 0%;
-  box-shadow: -2px 5px 10px rgba(0, 0, 0, .2);
+  border-radius: 0% 5% 1% 0%;
+  box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.2);
   font-size: calc(0.7rem + 1vw);
   font-family: "Nightingale";
   text-transform: uppercase;
@@ -146,11 +167,20 @@ export default {
   text-transform: uppercase;
 }
 
-.slide-in, .slide-in-can {
+.arrow {
+  position: absolute;
+  top:0;
+  left: 1%;
+  width: 15%;
+}
+
+.slide-in,
+.slide-in-can {
   animation: slide-in 2s forwards;
 }
 
-.slide-out, .slide-out-can {
+.slide-out,
+.slide-out-can {
   animation: slide-out 2s forwards;
 }
 
@@ -165,13 +195,13 @@ export default {
 
 @keyframes slide-in {
   100% {
-    left: 1.5%;
+    left: 0%;
   }
 }
 
 @-webkit-keyframes slide-in {
   100% {
-    left: 1.5%;
+    left: 0%;
   }
 }
 
