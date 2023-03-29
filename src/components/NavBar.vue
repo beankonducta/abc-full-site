@@ -1,8 +1,8 @@
 <template>
   <div class="nav">
-    <a @click="scroll('about')" class="nav-item" href="#about">About</a>
     <a @click="scroll('products')" class="nav-item" href="#products">Our Drinks</a>
-    <a @click="scroll('contact')" class="nav-item" href="#contact">Contact</a>
+    <a @click="scroll('about')" class="nav-item" href="#about">About</a>
+    <!-- <a @click="scroll('contact')" class="nav-item" href="#contact">Contact</a> -->
   </div>
 </template>
 

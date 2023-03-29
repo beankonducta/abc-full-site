@@ -31,7 +31,7 @@
     <div
       class="cocktail"
       :style="{ background: this.color, color: this.bg }"
-      :class="isVisible ? 'slide-in' : 'slide-out'"
+      :class="[isVisible ? 'slide-in' : 'slide-out', screenWidth <= 1000 ? 'hide' : '']"
     >
       <div class="cocktail-header">cocktail idea</div>
       <div class="cocktail-body">
@@ -60,6 +60,7 @@ export default {
     return {
       isVisible: false,
       yPos: 0,
+      screenWidth: 0
     };
   },
   mounted() {
@@ -72,11 +73,21 @@ export default {
     };
     const observer = new IntersectionObserver(this.handleIntersect, options);
     observer.observe(this.$el);
+    this.updateScreenWidth();
+    this.onScreenResize();
   },
   methods: {
     handleIntersect(entries) {
       const entry = entries[0];
       this.isVisible = entry.isIntersecting;
+    },
+    onScreenResize() {
+      window.addEventListener("resize", () => {
+        this.updateScreenWidth();
+      });
+    },
+    updateScreenWidth() {
+      this.screenWidth = window.innerWidth;
     },
   },
   computed: {
@@ -189,6 +200,10 @@ export default {
 
 .relative {
   position: relative;
+}
+
+.hide {
+  display: none;
 }
 
 @keyframes slide-in {
