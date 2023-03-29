@@ -12,6 +12,7 @@
       :bg="product.bg"
       :scrollY="scrollY"
       :arrowColor="index > 0 ? products[index - 1].bg : 'white'"
+      :icon="product.icon"
     />
     <Footer></Footer>
     <!-- <Product
@@ -58,6 +59,7 @@ export default {
           caption: "Floral Herbal Tea with Honey and Mosaic Hops",
           color: "#702E3E",
           bg: "#EFB8A9",
+          icon: require("./assets/images/icon_flower.svg")
         },
         {
           img: require("./assets/images/Mellona Can Mock.png"),
@@ -65,6 +67,7 @@ export default {
           caption: "Earl Grey Tea with Honey",
           color: "#003B4A",
           bg: "#A191B2",
+          icon: require("./assets/images/icon_drop.svg")
         },
         {
           img: require("./assets/images/Pomona Can Mock.png"),
@@ -72,6 +75,7 @@ export default {
           caption: "Fruity Green Tea with Honey and Mosaic Hops",
           color: "#1A5632",
           bg: "#BDCF9B",
+          icon: require("./assets/images/icon_hop.svg")
         },
         {
           img: require("./assets/images/Sparkling Can Mock.png"),
@@ -79,6 +83,7 @@ export default {
           caption: "Simple, Light and Bubbly Sparkling Water",
           color: "#415364",
           bg: "#FFFFFF",
+          icon: require("./assets/images/icon_star.svg")
         },
         {
           img: require("./assets/images/Tonic Can Mock.png"),
@@ -86,6 +91,7 @@ export default {
           caption: "Deliciously Crisp Citrus Based Tonic",
           color: "#003B4A",
           bg: "#B2E1D8",
+          icon: require("./assets/images/icon_lemon.svg")
         },
       ],
       scrollY: 0,

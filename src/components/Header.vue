@@ -2,13 +2,13 @@
   <div class="header">
       <div id="inner">
         <img id="header-logo" :src="require('@/assets/images/logo.svg')" />
-        <div id="about-container">
+        <!-- <div id="about-container">
           <object
             id="elder-flower"
             type="image/svg+xml"
             :data="require('@/assets/images/elder_flower.svg')"
           ></object>
-        </div>
+        </div> -->
       </div>
   </div>
 </template>

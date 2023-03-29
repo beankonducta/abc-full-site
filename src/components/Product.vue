@@ -1,8 +1,8 @@
 <template>
   <div class="product" :ref="title" :style="{ background: bg }">
+    <div class="arrow">
     <svg
       version="1.1"
-      class="arrow"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       x="0px"
@@ -17,6 +17,8 @@
 	C142.07,0.11,142.92,0,144,0H0C1.2,0,2.12,0.14,2.66,0.25z"
       />
     </svg>
+    <img :src="icon" />
+    </div>
     <div
       class="product-wrapper fade"
       id="products"
@@ -31,11 +33,6 @@
       :style="{ background: this.color, color: this.bg }"
       :class="isVisible ? 'slide-in' : 'slide-out'"
     >
-      <div class="cocktail-header">about</div>
-      <div class="cocktail-body">
-        this is made with really yummy ingredients we promise you're gonna
-        really love it
-      </div>
       <div class="cocktail-header">cocktail idea</div>
       <div class="cocktail-body">
         2oz gin, 1oz lemon, 1oz sugar. shake ingredients and pour over crushed
@@ -56,7 +53,8 @@ export default {
     color: String,
     bg: String,
     scrollY: Number,
-    arrowColor: String
+    arrowColor: String,
+    icon: String
   },
   data() {
     return {
@@ -118,6 +116,7 @@ export default {
   font-size: calc(1rem + 4vw);
   font-family: "BNMainz";
   text-transform: uppercase;
+  letter-spacing: 1rem;
 }
 .image {
   width: 60%;
@@ -126,6 +125,7 @@ export default {
   font-size: calc(0.7rem + 1vw);
   font-family: "Nightingale";
   text-transform: uppercase;
+  letter-spacing: .12rem
 }
 
 .fade {
@@ -140,13 +140,11 @@ export default {
 .cocktail {
   width: 30%;
   position: absolute;
-  top: 25%;
+  top: 35%;
   left: -30%;
-  border-radius: 0% 5% 1% 0%;
+  padding-left: 1%;
+  border-radius: 0% 1% 1% 0%;
   box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.2);
-  font-size: calc(0.7rem + 1vw);
-  font-family: "Nightingale";
-  text-transform: uppercase;
 }
 
 .cocktail a {
@@ -154,17 +152,17 @@ export default {
 }
 
 .cocktail-header {
-  padding-top: 1vh;
+  padding-top: 2vh;
   font-size: calc(1rem + 2vw);
   font-family: "BNMainz";
   text-transform: uppercase;
+  letter-spacing: 1rem;
 }
 
 .cocktail-body {
   padding: 2vh;
-  font-size: calc(0.7rem + 1vw);
+  font-size: calc(0.5rem + 1vw);
   font-family: "Nightingale";
-  text-transform: uppercase;
 }
 
 .arrow {
@@ -194,12 +192,24 @@ export default {
 }
 
 @keyframes slide-in {
+  0% {
+    left: -30%;
+  }
+  70% {
+    left: -30%;
+  }
   100% {
     left: 0%;
   }
 }
 
 @-webkit-keyframes slide-in {
+  0% {
+    left: -30%;
+  }
+  70% {
+    left: -30%;
+  }
   100% {
     left: 0%;
   }

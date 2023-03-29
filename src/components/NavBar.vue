@@ -28,7 +28,7 @@ export default {
   font-size: calc(.4rem + 1vw);
   font-family: "Nightingale";
   text-transform: uppercase;
-  color: #AE841F;
+  letter-spacing: .12rem
 }
 
 .nav-item {
