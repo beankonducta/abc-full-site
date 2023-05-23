@@ -203,7 +203,7 @@ export default {
 .alc {
 	position: absolute;
 	bottom: -40%;
-	left: 80%;
+	left: 2%;
 	width: 20%;
 }
 
