@@ -1,5 +1,5 @@
 <template>
-  <div class="product" :ref="title" :style="{ background: bg }">
+  <div class="product" :ref="title" :style="{ background: bg }" id="products">
     <div class="arrow">
     <svg
       version="1.1"
@@ -21,10 +21,9 @@
     </div>
     <div
       class="product-wrapper fade"
-      id="products"
       :class="[{ visible: isVisible }]"
     >
-      <div class="title" :style="{ color: color }">{{ title }}</div>
+      <div class="title" :style="{ color: color }" :class="[screenWidth <= 1000 ? 'hide' : '' ]">{{ title }}</div>
       <img class="image slide-in-can" v-bind:src="img" />
       <div class="caption" :color="color">{{ caption }}</div>
     </div>
@@ -33,10 +32,9 @@
       :style="{ background: this.color, color: this.bg }"
       :class="[isVisible ? 'slide-in' : 'slide-out', screenWidth <= 1000 ? 'hide' : '']"
     >
-      <div class="cocktail-header">cocktail idea</div>
+      <div class="cocktail-header">{{  cocktailHeader }}</div>
       <div class="cocktail-body">
-        2oz gin, 1oz lemon, 1oz sugar. shake ingredients and pour over crushed
-        ice, top with 6oz mellona
+       {{  cocktailBody }}
       </div>
     </div>
   </div>
@@ -54,7 +52,9 @@ export default {
     bg: String,
     scrollY: Number,
     arrowColor: String,
-    icon: String
+    icon: String,
+    cocktailHeader: String,
+    cocktailBody: String
   },
   data() {
     return {
@@ -156,6 +156,7 @@ export default {
   padding-left: 1%;
   border-radius: 0% 1% 1% 0%;
   box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0% 0%, 96% 0, 100% 100%, 0% 100%);
 }
 
 .cocktail a {
@@ -210,7 +211,7 @@ export default {
   0% {
     left: -30%;
   }
-  70% {
+  50% {
     left: -30%;
   }
   100% {
@@ -222,7 +223,7 @@ export default {
   0% {
     left: -30%;
   }
-  70% {
+  50% {
     left: -30%;
   }
   100% {

@@ -35,6 +35,7 @@ export default {
 }
 
 #header-logo {
+  margin-top: 10vh;
   width: 45%;
 }
 

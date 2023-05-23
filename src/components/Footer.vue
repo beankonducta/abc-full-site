@@ -48,6 +48,8 @@ export default {
     return {
       arrowColor: "#B2E1D8"
     }
+  },
+  methods: {
   }
 };
 </script>
