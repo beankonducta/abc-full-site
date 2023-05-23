@@ -11,7 +11,7 @@
 		<div class="product-wrapper fade" :class="[{ visible: isVisible }]">
 			<div class="title" :style="{ color: color }" :class="[screenWidth <= 1000 ? 'hide' : '']">{{ title }}</div>
 			<img class="image slide-in-can" v-bind:src="img" />
-			<div class="caption" :color="color">{{ caption }}</div>
+			<div class="caption" :style="{ color: compColor }">{{ caption }}</div>
 		</div>
 		<div class="cocktail" :style="{ background: this.color, color: this.bg }"
 			:class="[isVisible ? 'slide-in' : 'slide-out', screenWidth <= 1000 ? 'hide' : '']">
