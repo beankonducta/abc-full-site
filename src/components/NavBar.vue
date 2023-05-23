@@ -24,8 +24,8 @@ export default {
 .nav {
   text-align: center;
   margin-right: 3vw;
-  padding-top: 1vh;
-  margin-top: -1vh;
+  padding-top: 2vh;
+  margin-top: -2vh;
   margin-bottom: 1vh;
   font-size: calc(.4rem + 1vw);
   font-family: "Nightingale";
