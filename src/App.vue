@@ -13,8 +13,10 @@
       :scrollY="scrollY"
       :arrowColor="index > 0 ? products[index - 1].bg : 'white'"
       :icon="product.icon"
-      :cocktailHeader="product.cocktailHeader"
-      :cocktailBody="product.cocktailBody"
+      :cocktailHeader="alc ? product.cocktailHeader : product.mocktailHeader"
+      :cocktailBody="alc ? product.cocktailBody : product.mocktailBody"
+      :alc="alc"
+      @switchAlc="alc = !alc"
     />
     <Footer></Footer>
     <!-- <Product
@@ -39,6 +41,7 @@ export default {
   name: "App",
   data() {
     return {
+      alc: true,
       // light then dark, mellona, pomona, khloris, tonic, water, accent gold color last
       colors: [
         "#A191B2",
@@ -63,7 +66,9 @@ export default {
           bg: "#EFB8A9",
           icon: require("./assets/images/icon_flower.svg"),
           cocktailHeader: "Khloris Cocktail",
-          cocktailBody: "1.5 oz Gin, 1 oz Khloris, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
+          cocktailBody: "1.5 oz Gin, 1 oz Khloris, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel",
+          mocktailHeader: "Khloris Mocktail",
+          mocktailBody: "1 oz Khloris, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
         },
         {
           img: require("./assets/images/Mellona Can Mock.png"),
@@ -73,7 +78,9 @@ export default {
           bg: "#A191B2",
           icon: require("./assets/images/icon_drop.svg"),
           cocktailHeader: "Mellona Cocktail",
-          cocktailBody: "1.5 oz Vodka, 1 oz Mellona, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
+          cocktailBody: "1.5 oz Vodka, 1 oz Mellona, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel",
+          mocktailHeader: "Mellona Mocktail",
+          mocktailBody: "1 oz Mellona, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
         },
         {
           img: require("./assets/images/Pomona Can Mock.png"),
@@ -83,7 +90,9 @@ export default {
           bg: "#BDCF9B",
           icon: require("./assets/images/icon_hop.svg"),
           cocktailHeader: "Pomona Cocktail",
-          cocktailBody: "1.5 oz Vodka, 1 oz Pomona, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
+          cocktailBody: "1.5 oz Vodka, 1 oz Pomona, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel",
+          mocktailHeader: "Pomona Mocktail",
+          mocktailBody: "1 oz Pomona, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
         },
         {
           img: require("./assets/images/Sparkling Can Mock.png"),
@@ -93,7 +102,9 @@ export default {
           bg: "#FFFFFF",
           icon: require("./assets/images/icon_star.svg"),
           cocktailHeader: "Sparkling Cocktail",
-          cocktailBody: "1.5 oz Vodka, 1 oz Sparkling, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
+          cocktailBody: "1.5 oz Vodka, 1 oz Sparkling, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel",
+          mocktailHeader: "Sparkling Mocktail",
+          mocktailBody: "1 oz Sparkling, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
         },
         {
           img: require("./assets/images/Tonic Can Mock.png"),
@@ -103,7 +114,9 @@ export default {
           bg: "#B2E1D8",
           icon: require("./assets/images/icon_lemon.svg"),
           cocktailHeader: "Tonic Cocktail",
-          cocktailBody: "1.5 oz Gin, 1 oz Tonic, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
+          cocktailBody: "1.5 oz Gin, 1 oz Tonic, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel",
+          mocktailHeader: "Tonic Mocktail",
+          mocktailBody: "1 oz Tonic, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
         },
       ],
       scrollY: 0,
