@@ -9,12 +9,12 @@
 			<img :src="icon" />
 		</div>
 		<div class="product-wrapper fade" :class="[{ visible: isVisible }]">
-			<div class="title" :style="{ color: color }" :class="[screenWidth <= 1000 ? 'hide' : '']">{{ title }}</div>
+			<div class="title" :style="{ color: color }" :class="[screenWidth <= minWidth ? 'hide' : '']">{{ title }}</div>
 			<img class="image slide-in-can" v-bind:src="img" />
 			<div class="caption" :style="{ color: compColor }">{{ caption }}</div>
 		</div>
 		<div class="cocktail" :style="{ background: this.color, color: this.bg }"
-			:class="[isVisible ? 'slide-in' : 'slide-out', screenWidth <= 1000 ? 'hide' : '']">
+			:class="[isVisible ? 'slide-in' : 'slide-out', screenWidth <= minWidth ? 'hide' : '']">
 			<div class="alc" v-if="alc" @click="switchAlc()">
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 29.54 29.54"
@@ -72,7 +72,8 @@ export default {
 		return {
 			isVisible: false,
 			yPos: 0,
-			screenWidth: 0
+			screenWidth: 0,
+			minWidth: 1100
 		};
 	},
 	mounted() {
@@ -173,9 +174,11 @@ export default {
 
 .cocktail {
 	width: 30%;
+	min-width: 380px;
 	position: absolute;
 	top: 35%;
 	left: -30%;
+	padding-right: 1%;
 	padding-left: 1%;
 	border-radius: 0% 1% 1% 0%;
 	box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.2);
@@ -188,6 +191,8 @@ export default {
 
 .cocktail-header {
 	padding-top: 2vh;
+	width: 85%;
+	margin: 0 auto;
 	font-size: calc(1rem + 2vw);
 	font-family: "BNMainz";
 	text-transform: uppercase;
@@ -202,7 +207,7 @@ export default {
 
 .alc {
 	position: absolute;
-	bottom: -40%;
+	bottom: -50%;
 	left: 2%;
 	width: 20%;
 }
@@ -215,7 +220,7 @@ export default {
 
 .arrow {
 	position: absolute;
-	top: 0;
+	top: -1px;
 	left: 1%;
 	width: 15%;
 }
@@ -245,11 +250,11 @@ export default {
 
 @keyframes slide-in {
 	0% {
-		left: -30%;
+		left: -70%;
 	}
 
-	50% {
-		left: -30%;
+	30% {
+		left: -70%;
 	}
 
 	100% {
@@ -259,11 +264,11 @@ export default {
 
 @-webkit-keyframes slide-in {
 	0% {
-		left: -30%;
+		left: -70%;
 	}
 
-	50% {
-		left: -30%;
+	30% {
+		left: -70%;
 	}
 
 	100% {
