@@ -76,6 +76,11 @@ export default {
 			minWidth: 1100
 		};
 	},
+	updated() {
+		this.yPos =
+			this.$refs[this.title].getBoundingClientRect().y +
+			document.documentElement.scrollTop;
+	},
 	mounted() {
 		this.yPos =
 			this.$refs[this.title].getBoundingClientRect().y +
