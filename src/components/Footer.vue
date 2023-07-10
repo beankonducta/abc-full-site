@@ -36,8 +36,8 @@
     <WhereToBuy id="buy"></WhereToBuy>
   </div>
   <div class="footer-inner">
-      <img class="footer-img" :src="require('@/assets/images/amphora.svg')" />
-      <a id="contact" href="mailto:hello@augurybeverage.co">Contact us</a>
+      
+      <a id="contact" href="mailto:hello@augurybeverage.co"><img class="footer-img" :src="require('@/assets/images/amphora.svg')" /> Contact us</a>
     </div>
 </div>
 </template>
@@ -71,11 +71,10 @@ export default {
 }
 
 .footer-inner {
-  margin-top: 2vh;
+  padding-bottom: 1vw;
+  padding-left: 5vw;
   width: 100px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
 }
 
 .footer-img {

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NavBar></NavBar>
+    <NavBar @switchAlc="alc = !alc"></NavBar>
     <Header></Header>
     <Product
       v-for="(product, index) in products"
@@ -16,7 +16,6 @@
       :cocktailHeader="alc ? product.cocktailHeader : product.mocktailHeader"
       :cocktailBody="alc ? product.cocktailBody : product.mocktailBody"
       :alc="alc"
-      @switchAlc="alc = !alc"
     />
     <Footer></Footer>
     <!-- <Product

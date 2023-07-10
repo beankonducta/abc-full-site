@@ -8,40 +8,13 @@
 			</svg>
 			<img :src="icon" />
 		</div>
-		<div class="product-wrapper fade" :class="[{ visible: isVisible }]">
+		<div class="product-wrapper fade" :class="[{ visible: isVisible }]" :style="{opacity: opacity}">
 			<div class="title" :style="{ color: color }" :class="[screenWidth <= minWidth ? 'hide' : '']">{{ title }}</div>
 			<img class="image slide-in-can" v-bind:src="img" />
 			<div class="caption" :style="{ color: compColor }">{{ caption }}</div>
 		</div>
-		<div class="cocktail" :style="{ background: this.color, color: this.bg }"
+		<div class="cocktail" :style="{ background: this.color, color: this.bg, opacity: opacity }"
 			:class="[isVisible ? 'slide-in' : 'slide-out', screenWidth <= minWidth ? 'hide' : '']">
-			<div class="alc" v-if="alc" @click="switchAlc()">
-				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 29.54 29.54"
-					style="enable-background:new 0 0 29.54 29.54;" xml:space="preserve">
-					<g>
-						<path :fill="compColor"
-							d="M16.62,5.53c0,1.02-0.83,1.85-1.85,1.85s-1.85-0.83-1.85-1.85s1.98-3.37,1.98-3.37S16.62,4.51,16.62,5.53z" />
-						<path :fill="compColor" d="M15.29,14.26v-0.85c2.49-0.19,4.6-1.74,5.59-3.91H8.67c0.99,2.17,3.1,3.72,5.59,3.91v0.85v5.58v0.3
-		c-0.3,0.2-1.24,0.85-2.17,1.9h5.38c-0.94-1.05-1.88-1.7-2.17-1.9v-0.3V14.26z" />
-					</g>
-				</svg>
-			</div>
-			<div class="alc" v-if="!alc" @click="switchAlc()">
-				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 29.54 29.54"
-					style="enable-background:new 0 0 29.54 29.54;" xml:space="preserve">
-					<g>
-						<path :fill="compColor" d="M20.87,9.51h-9.47l3.9,3.9C17.79,13.21,19.89,11.67,20.87,9.51z" />
-						<path :fill="compColor"
-							d="M14.25,19.84v0.3c-0.3,0.2-1.24,0.85-2.17,1.9h5.38c-0.94-1.05-1.88-1.7-2.17-1.9v-0.3v-2.65l-1.04-1.04V19.84z" />
-						<path :fill="compColor" d="M14.77,3.97c-5.96,0-10.81,4.85-10.81,10.81s4.85,10.8,10.81,10.8s10.81-4.85,10.81-10.8S20.73,3.97,14.77,3.97z
-		M20.73,22.22c-1.69,1.35-3.8,2.1-5.96,2.1c-5.26,0-9.54-4.28-9.54-9.54c0-2.15,0.75-4.27,2.1-5.96l0.23-0.28l1.28,1.28l2.88,2.88
-		l2.54,2.54l1.04,1.04l5.72,5.72L20.73,22.22z M22.22,20.73l-0.23,0.28l-6.7-6.7l-4.8-4.8L8.53,7.55l0.28-0.23
-		c1.69-1.35,3.8-2.1,5.96-2.1c5.26,0,9.54,4.28,9.54,9.54C24.32,16.92,23.57,19.04,22.22,20.73z" />
-					</g>
-				</svg>
-			</div>
 			<div class="cocktail-header">{{ cocktailHeader }}</div>
 			<div class="cocktail-body">
 				{{ cocktailBody }}
@@ -124,6 +97,12 @@ export default {
 			let p = x / 7;
 			return p >= 0 ? "0%" : p * -1 + "%";
 		},
+		opacity() {
+			let x = this.yOffset;
+			let p = x / 7;
+			return `${150-p}%`;
+			
+		}
 	},
 };
 </script>
@@ -204,19 +183,6 @@ export default {
 	font-size: calc(0.2rem + 1vw);
 	font-family: "BNBergen";
   text-transform: uppercase;
-}
-
-.alc {
-	position: absolute;
-	bottom: 0%;
-	left: 100%;
-	width: 15%;
-}
-
-.alc:hover,
-.alc:active {
-	cursor: pointer;
-	opacity: 0.75;
 }
 
 .arrow {
