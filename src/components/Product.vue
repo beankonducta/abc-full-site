@@ -8,7 +8,7 @@
 			</svg>
 			<img :src="icon" />
 		</div>
-		<div class="product-wrapper fade" :class="[{ visible: isVisible }]" :style="{opacity: opacity}">
+		<div class="product-wrapper fade" :class="[{ visible: isVisible }]" :style="{opacity: opacity}" :id="`${title.replace(' ', '-')}`">
 			<div class="title" :style="{ color: color }" :class="[screenWidth <= minWidth ? 'hide' : '']">{{ title }}</div>
 			<img class="image slide-in-can" v-bind:src="img" />
 			<div class="caption" :style="{ color: compColor }">{{ caption }}</div>

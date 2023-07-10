@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NavBar @switchAlc="alc = !alc"></NavBar>
+    <NavBar></NavBar>
     <Header></Header>
     <Product
       v-for="(product, index) in products"
@@ -16,6 +16,7 @@
       :cocktailHeader="alc ? product.cocktailHeader : product.mocktailHeader"
       :cocktailBody="alc ? product.cocktailBody : product.mocktailBody"
       :alc="alc"
+      @switchAlc="alc = !alc"
     />
     <Footer></Footer>
     <!-- <Product
@@ -134,13 +135,14 @@ export default {
     },
     handleScroll(event) {
       this.scrollY = event.currentTarget.scrollY
+      console.log(this.scrollY)
     },
   },
   components: {
     Product,
     Header,
     NavBar,
-    Footer
+    Footer,
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
@@ -158,15 +160,9 @@ export default {
     url("./assets/fonts/BNMainz.woff") format("woff");
 }
 @font-face {
-  font-family: "Nightingale";
+  font-family: "MyWebFont";
   src: url("./assets/fonts/Nightingale.woff2") format("woff2"),
     url("./assets/fonts/Nightingale.woff") format("woff");
-}
-
-@font-face {
-  font-family: "BNBergen";
-  src: url("./assets/fonts/BNBergen.woff2") format("woff2"),
-    url("./assets/fonts/BNBergen.woff") format("woff");
 }
 
 body {
