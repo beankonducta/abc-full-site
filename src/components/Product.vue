@@ -201,15 +201,16 @@ export default {
 
 .cocktail-body {
 	padding: 2vh;
-	font-size: calc(0.5rem + 1vw);
-	font-family: "Nightingale";
+	font-size: calc(0.2rem + 1vw);
+	font-family: "BNBergen";
+  text-transform: uppercase;
 }
 
 .alc {
 	position: absolute;
-	bottom: -50%;
-	left: 2%;
-	width: 20%;
+	bottom: 0%;
+	left: 100%;
+	width: 15%;
 }
 
 .alc:hover,

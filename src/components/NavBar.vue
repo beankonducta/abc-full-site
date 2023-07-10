@@ -2,7 +2,7 @@
   <div class="nav">
     <a @click="scroll('products')" class="nav-item" href="#products">Our Drinks</a>
     <a @click="scroll('about')" class="nav-item" href="#about">About</a>
-    <a @click="scroll('about')" class="nav-item" href="#about">Where To Buy</a>
+    <a @click="scroll('buy')" class="nav-item" href="#buy">Where To Buy</a>
     <!-- <a @click="scroll('contact')" class="nav-item" href="#contact">Contact</a> -->
   </div>
 </template>
@@ -13,6 +13,7 @@ export default {
   name: "NavBar",
   methods: {
     scroll(element) {
+      console.log(this.$refs[element])
       this.$refs[element].scrollIntoView()
     }
   }
@@ -28,7 +29,7 @@ export default {
   margin-top: -2vh;
   margin-bottom: 1vh;
   font-size: calc(.4rem + 1vw);
-  font-family: "Nightingale";
+  font-family: "BNBergen";
   text-transform: uppercase;
   letter-spacing: .12rem;
   position: fixed;
