@@ -53,7 +53,6 @@ export default {
   position: relative;
   background: white;
   text-align: left;
-  z-index: 9999;
 }
 .title {
   font-size: calc(.3rem + 4vw);

@@ -98,9 +98,11 @@ export default {
 			return p >= 0 ? "0%" : p * -1 + "%";
 		},
 		opacity() {
-			let x = this.yOffset;
-			let p = x / 7;
-			return `${150-p}%`;
+			// let x = this.yOffset;
+			// let p = x / 7;
+			
+			// return `${150-p}%`;
+			return "100%";
 			
 		}
 	},
