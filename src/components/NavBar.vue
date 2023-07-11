@@ -46,14 +46,18 @@ export default {
   },  
   methods: {
     scroll(element) {
-      console.log(this.$refs[element])
       this.$refs[element].scrollIntoView()
     },
     switchAlc() {
       this.alc = !this.alc
-      this.$emit('switchAlc')
+      localStorage.setItem("alc", this.alc ? "true" : "false");
+      this.$emit('switchAlc', this.alc)
     }
-  }
+  },
+  mounted() {
+    this.alc = localStorage.getItem('alc') === 'true';
+    this.$emit('switchAlc', this.alc)
+  },
 };
 </script>
 

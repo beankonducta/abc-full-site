@@ -80,76 +80,24 @@ export default {
 }
 
 @media (min-width: 1500px) {
-  #main {
-  }
   #header-logo {
-    width: 35%;
-  }
-  #about-text {
-    width: 35%;
-  }
-  #elder-flower {
-    width: 15%;
-    top: 48%;
-    left: 42.5%;
-  }
-  #squiggle-container {
-    width: 35%;
+    width: 37%;
   }
 }
 
 @media (max-width: 1200px) {
-  #main {
-  }
   #header-logo {
-    width: 60%;
-  }
-  #about-text {
-    width: 60%;
-  }
-  #elder-flower {
-    width: 25%;
-    top: 46%;
-    left: 37.5%;
-  }
-  #squiggle-container {
-    width: 60%;
+    width: 45%;
   }
 }
 @media (max-width: 1100px) {
-  #main {
-  }
   #header-logo {
-    width: 75%;
-  }
-  #about-text {
-    width: 75%;
-  }
-  #elder-flower {
-    width: 30%;
-    top: 48%;
-    left: 35%;
-  }
-  #squiggle-container {
-    width: 75%;
+    width: 55%;
   }
 }
 @media (max-width: 900px) {
-  #main {
-  }
   #header-logo {
-    width: 100%;
-  }
-  #about-text {
-    width: 100%;
-  }
-  #elder-flower {
-    width: 40%;
-    top: 50%;
-    left: 30%;
-  }
-  #squiggle-container {
-    width: 100%;
+    width: 75%;
   }
 }
 

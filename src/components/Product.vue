@@ -16,8 +16,14 @@
 		<!-- <div class="cocktail" :style="{ background: this.color, color: this.bg, opacity: opacity }"
 			:class="[isVisible ? 'slide-in' : 'slide-out', screenWidth <= minWidth ? 'hide' : '']">
 			<div class="cocktail-header">{{ cocktailHeader }}</div>
-			<div class="cocktail-body">
-				{{ cocktailBody }}
+			<div class="cocktail-body" v-html="cocktailBody">
+			
+			</div>
+		</div>
+		<div class="cocktail-mobile" :style="{ background: this.color, color: this.bg, opacity: opacity }"
+			:class="[screenWidth > minWidth ? 'hide' : '']">
+			<div class="cocktail-header">{{ cocktailHeader }}</div>
+			<div class="cocktail-body" v-html="cocktailBody">
 			</div>
 		</div> -->
 	</div>
@@ -168,7 +174,16 @@ export default {
 	padding-left: 1%;
 	border-radius: 0% 1% 1% 0%;
 	box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.2);
+}
 
+.cocktail-mobile {
+	width: 100%;
+	position: relative;
+	margin-top: 5%;
+	padding-right: 1%;
+	padding-left: 1%;
+	border-radius: 0% 1% 1% 0%;
+	box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .cocktail a {
@@ -190,6 +205,7 @@ export default {
 	font-size: calc(0.2rem + 1vw);
 	font-family: "BNBergen";
   text-transform: uppercase;
+  text-align: left;
 }
 
 .arrow {

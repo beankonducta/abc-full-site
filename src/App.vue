@@ -1,23 +1,12 @@
 <template>
   <div id="app">
-    <NavBar></NavBar>
+    <NavBar @switchAlc="switchAlc($event)"></NavBar>
     <Header></Header>
-    <Product
-      v-for="(product, index) in products"
-      :key="product.title"
-      :img="product.img"
-      :title="product.title"
-      :caption="product.caption"
-      :color="product.color"
-      :bg="product.bg"
-      :scrollY="scrollY"
-      :arrowColor="index > 0 ? products[index - 1].bg : 'white'"
-      :icon="product.icon"
+    <Product v-for="(product, index) in products" :key="product.title" :img="product.img" :title="product.title"
+      :caption="product.caption" :color="product.color" :bg="product.bg" :scrollY="scrollY"
+      :arrowColor="index > 0 ? products[index - 1].bg : 'white'" :icon="product.icon"
       :cocktailHeader="alc ? product.cocktailHeader : product.mocktailHeader"
-      :cocktailBody="alc ? product.cocktailBody : product.mocktailBody"
-      :alc="alc"
-      @switchAlc="alc = !alc"
-    />
+      :cocktailBody="alc ? product.cocktailBody : product.mocktailBody" :alc="alc" />
     <Footer></Footer>
     <!-- <Product
       :key="products[currentProduct].title"
@@ -41,7 +30,7 @@ export default {
   name: "App",
   data() {
     return {
-      alc: true,
+      alc: false,
       // light then dark, mellona, pomona, khloris, tonic, water, accent gold color last
       colors: [
         "#A191B2",
@@ -59,82 +48,123 @@ export default {
       currentProduct: 0,
       products: [
         {
-          img: require("./assets/images/LGG Can Mock.png"),
-          title: "Lemongrass Ginger Ale",
-          caption: "",
-          color: "",
-          bg: "",
-          icon: require(""),
-          cocktailHeader: "",
-          cocktailBody: "",
-          mocktailHeader: "",
-          mocktailBody: ""
+          img: require("./assets/images/Khloris Can Mock.png"),
+          title: "Khloris",
+          caption: "Floral Herbal Tea with Honey and Mosaic Hops",
+          color: "#702E3E",
+          bg: "#EFB8A9",
+          icon: require("./assets/images/icon_flower.svg"),
+          cocktailHeader: "Cocktail Idea",
+          cocktailBody: `G and Tea  <br><br>
+                         - 2 oz Gin, the more herbal the better <br>
+                         - 1/2 oz lime juice <br>
+                         - 4 oz Augury Khloris <br>
+                         - lime wheel <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with lime wheel.`,
+          mocktailHeader: "Mocktail Idea",
+          mocktailBody: `Tonic and Tea <br><br>
+                         - 3 oz Augury Tonic Water <br>
+                         - 1/2 oz lime juice <br>
+                         - 3oz Augury Khloris <br>
+                         - lime wheel <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with lime wheel.`
         },
         {
-          img: require("./assets/images/BBM Can Mock.png"),
-          title: "Blackberry Mint",
-          caption: "",
-          color: "",
-          bg: "",
-          icon: require(""),
-          cocktailHeader: "",
-          cocktailBody: "",
-          mocktailHeader: "",
-          mocktailBody: ""
+          img: require("./assets/images/Mellona Can Mock.png"),
+          title: "Mellona",
+          caption: "Earl Grey Tea with Honey",
+          color: "#003B4A",
+          bg: "#A191B2",
+          icon: require("./assets/images/icon_drop.svg"),
+          cocktailHeader: "Cocktail Idea",
+          cocktailBody: `Earl Grey Collins <br><br>
+                         - 2 oz Dry Gin <br>
+                         - 1 oz lemon juice <br>
+                         - 4 oz Augury Mellona <br>
+                         - orange wedge <br>
+                         - fresh mint <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with orange and mint.`,
+          mocktailHeader: "Mocktail Idea",
+          mocktailBody: `Earl Grey Collins <br><br>
+                         - 3 oz Augury Tonic Water <br>
+                         - 1 oz lemon juice <br>
+                         - 3 oz Augury Mellona <br>
+                         - orange wedge <br>
+                         - fresh mint <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with orange and mint.`
         },
         {
-          img: require("./assets/images/SF Can Mock.png"),
-          title: "Strawberry Fields",
-          caption: "",
-          color: "",
-          bg: "",
-          icon: require(""),
-          cocktailHeader: "",
-          cocktailBody: "",
-          mocktailHeader: "",
-          mocktailBody: ""
+          img: require("./assets/images/Pomona Can Mock.png"),
+          title: "Pomona",
+          caption: "Fruity Green Tea with Honey and Mosaic Hops",
+          color: "#1A5632",
+          bg: "#BDCF9B",
+          icon: require("./assets/images/icon_hop.svg"),
+          cocktailHeader: "Cocktail Idea",
+          cocktailBody: `Scotch Green Tea <br><br>
+                         - 2 oz blended scotch <br>
+                         - 6 oz Augury Pomona <br>
+                         - 1/2 oz lemon juice <br>
+                         - lemon wheel <br><br>
+                         Stir over ice and serve in your favorite glass. Garnish with lemon wheel.`,
+          mocktailHeader: "Mocktail Idea",
+          mocktailBody: `Green Tea Ginger <br><br>
+                         - 3 oz Taproot Lemongrass Ginger Ale <br>
+                         - 3 oz Augury Pomona <br>
+                         - 1 oz lime juice <br>
+                         - fresh mint <br>
+                         - candied ginger <br><br>
+                         Stir over ice and serve in your favorite glass. Garnish with mint and candied ginger.`
         },
         {
-          img: require("./assets/images/RB Can Mock.png"),
-          title: "Rootbeer",
-          caption: "",
-          color: "",
-          bg: "",
-          icon: require(""),
-          cocktailHeader: "",
-          cocktailBody: "",
-          mocktailHeader: "",
-          mocktailBody: ""
+          img: require("./assets/images/Sparkling Can Mock.png"),
+          title: "Sparkling Water",
+          caption: "Simple, Light and Bubbly Sparkling Water",
+          color: "#415364",
+          bg: "#FFFFFF",
+          icon: require("./assets/images/icon_star.svg"),
+          cocktailHeader: "Cocktail Idea",
+          cocktailBody: `Tequila Soda <br><br>
+                         - 2 oz blanco tequila <br>
+                         - 6 oz Augury Sparkling Water <br>
+                         - Lime Wheel <br><br>
+                         Stir over ice and serve in your favorite glass. Garnish with lime wheel.`,
+          mocktailHeader: "Mocktail Idea",
+          mocktailBody: `NA Tequila Soda <br><br>
+                         - 2 oz NA tequila (lyres is a good brand) <br>
+                         - 6 oz Augury Sparkling Water <br>
+                         - Lime Wheel <br><br>
+                         Stir over ice and serve in your favorite glass. Garnish with lime wheel.`,
         },
         {
-          img: require("./assets/images/CL Can Mock.png"),
-          title: "Cherry Limeade",
-          caption: "",
-          color: "",
-          bg: "",
-          icon: require(""),
-          cocktailHeader: "",
-          cocktailBody: "",
-          mocktailHeader: "",
-          mocktailBody: ""
-        },
-        {
-          img: require("./assets/images/LLM Can Mock.png"),
-          title: "Lemon Lime Lavender",
-          caption: "",
-          color: "",
-          bg: "",
-          icon: require(""),
-          cocktailHeader: "",
-          cocktailBody: "",
-          mocktailHeader: "",
-          mocktailBody: ""
+          img: require("./assets/images/Tonic Can Mock.png"),
+          title: "Tonic Water",
+          caption: "Deliciously Crisp Citrus Based Tonic",
+          color: "#003B4A",
+          bg: "#B2E1D8",
+          icon: require("./assets/images/icon_lemon.svg"),
+          cocktailHeader: "Cocktail Idea",
+          cocktailBody: `Whiskey Tonic <br><br>
+                         - 2 oz whiskey (bourbon works well) <br>
+                         - 6 oz Augury Tonic Water <br>
+                         - Lemon wheel <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with lemon wheel.`,
+          mocktailHeader: "Mocktail Idea",
+          mocktailBody: `Lemon-Lime Tonic <br><br>
+                         - 3 oz Taproot Lemon Lime Lavender Soda <br>
+                         - 1 oz fresh lemon or lime juice <br>
+                         - 4 oz Augury Tonic Water <br>
+                         - Lemon or lime wheel <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with lemon wheel.`
         },
       ],
       scrollY: 0,
     };
   },
   methods: {
+    switchAlc(value) {
+      this.alc = value;
+    },
     next() {
       this.currentProduct++;
       if (this.currentProduct > this.products.length - 1)
@@ -158,6 +188,9 @@ export default {
   created() {
     window.addEventListener("scroll", this.handleScroll);
   },
+  mounted() {
+    this.alc = localStorage.getItem("alc") === "true";
+  },
   unmounted() {
     window.removeEventListener("scroll", this.handleScroll);
   },
@@ -170,6 +203,7 @@ export default {
   src: url("./assets/fonts/BNMainz.woff2") format("woff2"),
     url("./assets/fonts/BNMainz.woff") format("woff");
 }
+
 @font-face {
   font-family: "MyWebFont";
   src: url("./assets/fonts/Nightingale.woff2") format("woff2"),
