@@ -1,22 +1,12 @@
 <template>
   <div id="app">
-    <NavBar @switchAlc="alc = !alc"></NavBar>
+    <NavBar @switchAlc="switchAlc($event)"></NavBar>
     <Header></Header>
-    <Product
-      v-for="(product, index) in products"
-      :key="product.title"
-      :img="product.img"
-      :title="product.title"
-      :caption="product.caption"
-      :color="product.color"
-      :bg="product.bg"
-      :scrollY="scrollY"
-      :arrowColor="index > 0 ? products[index - 1].bg : 'white'"
-      :icon="product.icon"
+    <Product v-for="(product, index) in products" :key="product.title" :img="product.img" :title="product.title"
+      :caption="product.caption" :color="product.color" :bg="product.bg" :scrollY="scrollY"
+      :arrowColor="index > 0 ? products[index - 1].bg : 'white'" :icon="product.icon"
       :cocktailHeader="alc ? product.cocktailHeader : product.mocktailHeader"
-      :cocktailBody="alc ? product.cocktailBody : product.mocktailBody"
-      :alc="alc"
-    />
+      :cocktailBody="alc ? product.cocktailBody : product.mocktailBody" :alc="alc" />
     <Footer></Footer>
     <!-- <Product
       :key="products[currentProduct].title"
@@ -40,7 +30,7 @@ export default {
   name: "App",
   data() {
     return {
-      alc: true,
+      alc: false,
       // light then dark, mellona, pomona, khloris, tonic, water, accent gold color last
       colors: [
         "#A191B2",
@@ -64,10 +54,20 @@ export default {
           color: "#702E3E",
           bg: "#EFB8A9",
           icon: require("./assets/images/icon_flower.svg"),
-          cocktailHeader: "Khloris Cocktail",
-          cocktailBody: "1.5 oz Gin, 1 oz Khloris, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel",
-          mocktailHeader: "Khloris Mocktail",
-          mocktailBody: "1 oz Khloris, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
+          cocktailHeader: "Cocktail Idea",
+          cocktailBody: `G and Tea  <br><br>
+                         - 2 oz Gin, the more herbal the better <br>
+                         - 1/2 oz lime juice <br>
+                         - 4 oz Augury Khloris <br>
+                         - lime wheel <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with lime wheel.`,
+          mocktailHeader: "Mocktail Idea",
+          mocktailBody: `Tonic and Tea <br><br>
+                         - 3 oz Augury Tonic Water <br>
+                         - 1/2 oz lime juice <br>
+                         - 3oz Augury Khloris <br>
+                         - lime wheel <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with lime wheel.`
         },
         {
           img: require("./assets/images/Mellona Can Mock.png"),
@@ -76,10 +76,22 @@ export default {
           color: "#003B4A",
           bg: "#A191B2",
           icon: require("./assets/images/icon_drop.svg"),
-          cocktailHeader: "Mellona Cocktail",
-          cocktailBody: "1.5 oz Vodka, 1 oz Mellona, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel",
-          mocktailHeader: "Mellona Mocktail",
-          mocktailBody: "1 oz Mellona, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
+          cocktailHeader: "Cocktail Idea",
+          cocktailBody: `Earl Grey Collins <br><br>
+                         - 2 oz Dry Gin <br>
+                         - 1 oz lemon juice <br>
+                         - 4 oz Augury Mellona <br>
+                         - orange wedge <br>
+                         - fresh mint <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with orange and mint.`,
+          mocktailHeader: "Mocktail Idea",
+          mocktailBody: `Earl Grey Collins <br><br>
+                         - 3 oz Augury Tonic Water <br>
+                         - 1 oz lemon juice <br>
+                         - 3 oz Augury Mellona <br>
+                         - orange wedge <br>
+                         - fresh mint <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with orange and mint.`
         },
         {
           img: require("./assets/images/Pomona Can Mock.png"),
@@ -88,10 +100,21 @@ export default {
           color: "#1A5632",
           bg: "#BDCF9B",
           icon: require("./assets/images/icon_hop.svg"),
-          cocktailHeader: "Pomona Cocktail",
-          cocktailBody: "1.5 oz Vodka, 1 oz Pomona, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel",
-          mocktailHeader: "Pomona Mocktail",
-          mocktailBody: "1 oz Pomona, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
+          cocktailHeader: "Cocktail Idea",
+          cocktailBody: `Scotch Green Tea <br><br>
+                         - 2 oz blended scotch <br>
+                         - 6 oz Augury Pomona <br>
+                         - 1/2 oz lemon juice <br>
+                         - lemon wheel <br><br>
+                         Stir over ice and serve in your favorite glass. Garnish with lemon wheel.`,
+          mocktailHeader: "Mocktail Idea",
+          mocktailBody: `Green Tea Ginger <br><br>
+                         - 3 oz Taproot Lemongrass Ginger Ale <br>
+                         - 3 oz Augury Pomona <br>
+                         - 1 oz lime juice <br>
+                         - fresh mint <br>
+                         - candied ginger <br><br>
+                         Stir over ice and serve in your favorite glass. Garnish with mint and candied ginger.`
         },
         {
           img: require("./assets/images/Sparkling Can Mock.png"),
@@ -100,10 +123,18 @@ export default {
           color: "#415364",
           bg: "#FFFFFF",
           icon: require("./assets/images/icon_star.svg"),
-          cocktailHeader: "Sparkling Cocktail",
-          cocktailBody: "1.5 oz Vodka, 1 oz Sparkling, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel",
-          mocktailHeader: "Sparkling Mocktail",
-          mocktailBody: "1 oz Sparkling, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
+          cocktailHeader: "Cocktail Idea",
+          cocktailBody: `Tequila Soda <br><br>
+                         - 2 oz blanco tequila <br>
+                         - 6 oz Augury Sparkling Water <br>
+                         - Lime Wheel <br><br>
+                         Stir over ice and serve in your favorite glass. Garnish with lime wheel.`,
+          mocktailHeader: "Mocktail Idea",
+          mocktailBody: `NA Tequila Soda <br><br>
+                         - 2 oz NA tequila (lyres is a good brand) <br>
+                         - 6 oz Augury Sparkling Water <br>
+                         - Lime Wheel <br><br>
+                         Stir over ice and serve in your favorite glass. Garnish with lime wheel.`,
         },
         {
           img: require("./assets/images/Tonic Can Mock.png"),
@@ -112,16 +143,28 @@ export default {
           color: "#003B4A",
           bg: "#B2E1D8",
           icon: require("./assets/images/icon_lemon.svg"),
-          cocktailHeader: "Tonic Cocktail",
-          cocktailBody: "1.5 oz Gin, 1 oz Tonic, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel",
-          mocktailHeader: "Tonic Mocktail",
-          mocktailBody: "1 oz Tonic, 0.5 oz Lemon Juice, 0.5 oz Simple Syrup, 2 oz Soda Water, Lemon Wheel"
+          cocktailHeader: "Cocktail Idea",
+          cocktailBody: `Whiskey Tonic <br><br>
+                         - 2 oz whiskey (bourbon works well) <br>
+                         - 6 oz Augury Tonic Water <br>
+                         - Lemon wheel <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with lemon wheel.`,
+          mocktailHeader: "Mocktail Idea",
+          mocktailBody: `Lemon-Lime Tonic <br><br>
+                         - 3 oz Taproot Lemon Lime Lavender Soda <br>
+                         - 1 oz fresh lemon or lime juice <br>
+                         - 4 oz Augury Tonic Water <br>
+                         - Lemon or lime wheel <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with lemon wheel.`
         },
       ],
       scrollY: 0,
     };
   },
   methods: {
+    switchAlc(value) {
+      this.alc = value;
+    },
     next() {
       this.currentProduct++;
       if (this.currentProduct > this.products.length - 1)
@@ -145,6 +188,9 @@ export default {
   created() {
     window.addEventListener("scroll", this.handleScroll);
   },
+  mounted() {
+    this.alc = localStorage.getItem("alc") === "true";
+  },
   unmounted() {
     window.removeEventListener("scroll", this.handleScroll);
   },
@@ -157,6 +203,7 @@ export default {
   src: url("./assets/fonts/BNMainz.woff2") format("woff2"),
     url("./assets/fonts/BNMainz.woff") format("woff");
 }
+
 @font-face {
   font-family: "Nightingale";
   src: url("./assets/fonts/Nightingale.woff2") format("woff2"),
