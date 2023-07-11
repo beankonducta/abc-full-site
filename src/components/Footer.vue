@@ -101,6 +101,8 @@ export default {
   font-family: "BNBergen";
   color: #003b4a;
   text-transform: uppercase;
+  line-height: 1.5rem;
+	letter-spacing: .1rem;
 }
 
 #about {

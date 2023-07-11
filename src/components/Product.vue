@@ -207,6 +207,8 @@ export default {
 	font-family: "BNBergen";
 	text-transform: uppercase;
 	text-align: left;
+	line-height: 1.5rem;
+	letter-spacing: .1rem;
 }
 
 .arrow {
