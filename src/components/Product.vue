@@ -1,25 +1,25 @@
 <template>
 	<div class="product" :ref="title" :style="{ background: bg }" id="products">
-		<div class="arrow">
+		<!-- <div class="arrow">
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				viewBox="0 0 144 48.95" style="enable-background: new 0 0 144 48.95" xml:space="preserve">
 				<path :fill="arrowColor" d="M2.66,0.25C29.78,6.92,53.5,24.17,70.43,48.11c0.79,1.12,2.4,1.12,3.19,0c16.96-23.98,40.73-41.25,67.89-47.9
 	C142.07,0.11,142.92,0,144,0H0C1.2,0,2.12,0.14,2.66,0.25z" />
 			</svg>
 			<img :src="icon" />
-		</div>
+		</div> -->
 		<div class="product-wrapper fade" :class="[{ visible: isVisible }]" :style="{opacity: opacity}" :id="`${title.replace(' ', '-')}`">
 			<div class="title" :style="{ color: color }" :class="[screenWidth <= minWidth ? 'hide' : '']">{{ title }}</div>
 			<img class="image slide-in-can" v-bind:src="img" />
 			<div class="caption" :style="{ color: compColor }">{{ caption }}</div>
 		</div>
-		<div class="cocktail" :style="{ background: this.color, color: this.bg, opacity: opacity }"
+		<!-- <div class="cocktail" :style="{ background: this.color, color: this.bg, opacity: opacity }"
 			:class="[isVisible ? 'slide-in' : 'slide-out', screenWidth <= minWidth ? 'hide' : '']">
 			<div class="cocktail-header">{{ cocktailHeader }}</div>
 			<div class="cocktail-body">
 				{{ cocktailBody }}
 			</div>
-		</div>
+		</div> -->
 	</div>
 </template>
 
