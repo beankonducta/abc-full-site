@@ -8,16 +8,17 @@
 			</svg>
 			<img :src="icon" />
 		</div> -->
-		<div class="product-wrapper fade" :class="[{ visible: isVisible }]" :style="{opacity: opacity}" :id="`${title.replace(' ', '-')}`">
-			<div class="title" :style="{ color: color }" :class="[screenWidth <= minWidth ? 'hide' : '']">{{ title }}</div>
+		<div class="product-wrapper fade" :class="[{ visible: isVisible }]" :style="{ opacity: opacity }"
+			:id="`${title.replace(' ', '-')}`">
+			<div class="title" :style="{ color: color }">{{ title }}</div>
 			<img class="image slide-in-can" v-bind:src="img" />
 			<div class="caption" :style="{ color: compColor }">{{ caption }}</div>
 		</div>
-		<!-- <div class="cocktail" :style="{ background: this.color, color: this.bg, opacity: opacity }"
+		<div class="cocktail" :style="{ background: this.color, color: this.bg, opacity: opacity }"
 			:class="[isVisible ? 'slide-in' : 'slide-out', screenWidth <= minWidth ? 'hide' : '']">
 			<div class="cocktail-header">{{ cocktailHeader }}</div>
 			<div class="cocktail-body" v-html="cocktailBody">
-			
+
 			</div>
 		</div>
 		<div class="cocktail-mobile" :style="{ background: this.color, color: this.bg, opacity: opacity }"
@@ -25,7 +26,7 @@
 			<div class="cocktail-header">{{ cocktailHeader }}</div>
 			<div class="cocktail-body" v-html="cocktailBody">
 			</div>
-		</div> -->
+		</div>
 	</div>
 </template>
 
@@ -111,10 +112,10 @@ export default {
 		opacity() {
 			// let x = this.yOffset;
 			// let p = x / 7;
-			
+
 			// return `${150-p}%`;
 			return "100%";
-			
+
 		}
 	},
 };
@@ -204,8 +205,8 @@ export default {
 	padding: 2vh;
 	font-size: calc(0.2rem + 1vw);
 	font-family: "BNBergen";
-  text-transform: uppercase;
-  text-align: left;
+	text-transform: uppercase;
+	text-align: left;
 }
 
 .arrow {

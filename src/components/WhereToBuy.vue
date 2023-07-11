@@ -2,6 +2,8 @@
   <div class="where-to-buy" id="buy">
     <div class="title">Retailers</div>
     <div class="inner">
+      <div class="text" v-if="retailers.length === 0">
+      Coming soon</div>
       <div class="text" v-for="retailer in retailers" :key="retailer.name">
         {{ retailer.name }}
         <br />

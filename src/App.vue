@@ -205,9 +205,15 @@ export default {
 }
 
 @font-face {
-  font-family: "MyWebFont";
+  font-family: "Nightingale";
   src: url("./assets/fonts/Nightingale.woff2") format("woff2"),
     url("./assets/fonts/Nightingale.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BNBergen";
+  src: url("./assets/fonts/BNBergen.woff2") format("woff2"),
+    url("./assets/fonts/BNBergen.woff") format("woff");
 }
 
 body {
