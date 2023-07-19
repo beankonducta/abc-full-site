@@ -36,8 +36,10 @@
     <WhereToBuy id="buy"></WhereToBuy>
   </div>
   <div class="footer-inner">
-      
-      <a id="contact" href="mailto:hello@augurybeverage.co"><img class="footer-img" :src="require('@/assets/images/amphora.svg')" /> Contact us</a>
+    <!-- <img class="footer-img" :src="require('@/assets/images/amphora.svg')" /> -->
+      <a class="footer-item" href="mailto:hello@augurybeverage.co"> Contact us</a>
+      <a class="footer-item" href="mailto:hello@augurybeverage.co"> Wholesale Inquiry</a>
+
     </div>
 </div>
 </template>
@@ -71,14 +73,29 @@ export default {
 }
 
 .footer-inner {
-  padding-bottom: 1vw;
-  padding-left: 5vw;
-  width: 100px;
-  text-align: left;
+  text-align: center;
+  margin-right: 3vw;
+  padding-top: 2vh;
+  margin-top: -2vh;
+  margin-bottom: 1vh;
+  font-size: calc(.2rem + 1vw);
+  font-family: "BNBergen";
+  text-transform: uppercase;
+  letter-spacing: .12rem;
+  z-index: 99;
+  width: 101%;
+  background: white;
 }
 
 .footer-img {
-  width: 80%;
+  width: 10%;
+  float: left;
+  margin-left: 1vw;
+}
+
+.footer-item {
+  padding: .5rem;
+  margin-bottom: 0;
 }
 
 #contact {
@@ -122,4 +139,5 @@ export default {
   left: 1%;
   width: 15%;
 }
+
 </style>

@@ -4,7 +4,7 @@
     <a @click="scroll('about')" class="nav-item" href="#about">About</a>
     <!-- <a @click="scroll('buy')" class="nav-item" href="#buy">Where To Buy</a> -->
     <!-- <a @click="scroll('contact')" class="nav-item" href="#contact">Contact</a> -->
-    <div class="alc" v-if="alc" @click="switchAlc()">
+    <div class="alc" v-if="alc" @click="switchAlc()" title="Click to swap drink ideas between alcoholic and non alcoholic">
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 29.54 29.54"
 					style="enable-background:new 0 0 29.54 29.54;" xml:space="preserve">
@@ -69,7 +69,8 @@ export default {
   padding-top: 2vh;
   margin-top: -2vh;
   margin-bottom: 1vh;
-  font-size: calc(.4rem + 1vw);
+  padding-bottom: 1vh;
+  font-size: calc(.2rem + 1vw);
   font-family: "BNBergen";
   text-transform: uppercase;
   letter-spacing: .12rem;
@@ -90,9 +91,10 @@ export default {
 .alc:active {
 	cursor: pointer;
 	opacity: 0.75;
+  transform: rotate(15deg);
 }
 
 .nav-item {
-  padding: 1rem;
+  padding: .5rem;
 }
 </style>
