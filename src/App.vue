@@ -255,7 +255,47 @@ a:active {
   color: #bea977;
 }
 
-.title {
+@media screen and (max-width: 1100px) {
+  .title {
+	font-size: 2.75rem;
+	font-family: "BNMainz";
+	text-transform: uppercase;
+	letter-spacing: 1rem;
+  color: #003b4a;
+}
+
+.subtitle {
+	font-size: 2rem;
+	font-family: "BNMainz";
+	text-transform: uppercase;
+	letter-spacing: .7rem;
+  color: #003b4a;
+}
+
+.caption {
+	font-size: 1.25rem;
+	font-family: "Nightingale";
+	text-transform: uppercase;
+	letter-spacing: .12rem
+}
+
+.text {
+  font-size: 1rem;
+  font-family: "BNBergen";
+  color: #003b4a;
+  text-transform: uppercase;
+  line-height: 1.2rem;
+	letter-spacing: .1rem;
+}
+
+.text-title {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+}
+
+@media screen and (min-width: 1100px) {
+  .title {
 	font-size: 4rem;
 	font-family: "BNMainz";
 	text-transform: uppercase;
@@ -289,6 +329,8 @@ a:active {
 
 .text-title {
   margin-top: 10px;
-  font-size: calc(0.5rem + 1vw);
+  font-size: 1.5rem;
 }
+}
+
 </style>
