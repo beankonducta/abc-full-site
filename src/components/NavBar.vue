@@ -78,13 +78,14 @@ export default {
   z-index: 99;
   width: 101%;
   background: white;
+  box-shadow: -2px 5px 10px rgba(46, 35, 35, 0.1);
 }
 
 .alc {
-  position: fixed;
-  width: 50px;
-  top: 0;
-  right: 0;
+  min-width: 30px;
+  max-width: 50px;
+  margin-top: -5px;
+  float: right;
 }
 
 .alc:hover,

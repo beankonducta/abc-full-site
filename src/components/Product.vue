@@ -166,7 +166,7 @@ export default {
 	padding-right: 1%;
 	padding-left: 2%;
 	border-radius: 0% 1% 1% 0%;
-	box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: -2px 5px 10px rgba(46, 35, 35, 0.1);
 }
 
 .cocktail-mobile {
@@ -178,7 +178,7 @@ export default {
 	padding-left: 10%;
 	margin-top: 5%;
 	border-radius: 0% 1% 1% 0%;
-	box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: -2px 5px 10px rgba(46, 35, 35, 0.1);
 }
 
 .cocktail-mobile-body {
