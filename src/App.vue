@@ -217,7 +217,7 @@ export default {
 }
 
 body {
-  width: 102vw;
+  width: 101vw;
   margin-left: -1vw;
   overflow-x: hidden;
 }
@@ -236,7 +236,6 @@ body {
 a {
   color: #ae841f;
   text-decoration: none;
-  font-size:1rem;
 }
 
 a:hover {
@@ -255,17 +254,21 @@ a:active {
   color: #bea977;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1099px) {
+  a {
+    font-size:.5rem;
+  }
+
   .title {
-	font-size: 2.75rem;
+	font-size: 2rem;
 	font-family: "BNMainz";
 	text-transform: uppercase;
-	letter-spacing: 1rem;
+	letter-spacing: .75rem;
   color: #003b4a;
 }
 
 .subtitle {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	font-family: "BNMainz";
 	text-transform: uppercase;
 	letter-spacing: .7rem;
@@ -273,14 +276,14 @@ a:active {
 }
 
 .caption {
-	font-size: 1.25rem;
+	font-size: 1rem;
 	font-family: "Nightingale";
 	text-transform: uppercase;
 	letter-spacing: .12rem
 }
 
 .text {
-  font-size: 1rem;
+  font-size: .5rem;
   font-family: "BNBergen";
   color: #003b4a;
   text-transform: uppercase;
@@ -290,11 +293,15 @@ a:active {
 
 .text-title {
   margin-top: 10px;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 }
 
 @media screen and (min-width: 1100px) {
+
+  a {
+    font-size: 1rem;
+  }
   .title {
 	font-size: 4rem;
 	font-family: "BNMainz";
