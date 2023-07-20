@@ -28,7 +28,7 @@
         Our diverse lineup includes bubbly hop-infused teas, refreshing tonics, and sparkling waters, all carefully crafted with handpicked, locally-sourced ingredients.
         <br />
         <br />
-        Our passionate team is dedicated to creating great-tasting beverages without harmful additives. We hope you enjoy our drinks as much as we love making them.
+        We are dedicated to creating great-tasting beverages without harmful additives. We hope you enjoy our drinks as much as we love making them.
       </div>
       
     </div>
