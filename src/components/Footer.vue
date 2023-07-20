@@ -105,23 +105,6 @@ export default {
   letter-spacing: 0.12rem;
 }
 
-.title {
-  font-size: calc(.3rem + 4vw);
-  font-family: "BNMainz";
-  text-transform: uppercase;
-  letter-spacing: 1rem;
-  color: #003b4a;
-  padding-bottom: 1rem;
-}
-.text {
-  font-size: calc(0.2rem + 1vw);
-  font-family: "BNBergen";
-  color: #003b4a;
-  text-transform: uppercase;
-  line-height: 1.5rem;
-	letter-spacing: .1rem;
-}
-
 #about {
   text-align: left;
   padding: 5vw;

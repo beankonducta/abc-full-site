@@ -14,17 +14,17 @@
 			<img class="image slide-in-can" v-bind:src="img" />
 			<div class="caption" :style="{ color: compColor }">{{ caption }}</div>
 		</div>
-		<div class="cocktail" :style="{ background: this.color, color: this.bg, opacity: opacity }"
+		<div class="cocktail" :style="{ background: this.color }"
 			:class="[isVisible ? 'slide-in' : 'slide-out', screenWidth <= minWidth ? 'hide' : '']">
-			<div class="cocktail-header">{{ cocktailHeader }}</div>
-			<div class="cocktail-body" v-html="cocktailBody">
+			<div class="subtitle" :style="{color: this.bg, opacity: opacity }">{{ cocktailHeader }}</div>
+			<div class="text" :style="{color: this.bg, opacity: opacity }" v-html="cocktailBody">
 
 			</div>
 		</div>
-		<div class="cocktail-mobile" :style="{ background: this.color, color: this.bg, opacity: opacity }"
+		<div class="cocktail-mobile" :style="{ background: this.color}"
 			:class="[screenWidth > minWidth ? 'hide' : '']">
-			<div class="cocktail-header">{{ cocktailHeader }}</div>
-			<div class="cocktail-body" v-html="cocktailBody">
+			<div class="subtitle cocktail-mobile-header" :style="{color: this.bg, opacity: opacity }">{{ cocktailHeader }}</div>
+			<div class="text cocktail-mobile-body" :style="{color: this.bg, opacity: opacity }" v-html="cocktailBody">
 			</div>
 		</div>
 	</div>
@@ -138,22 +138,10 @@ export default {
 	margin: 0 auto;
 }
 
-.title {
-	font-size: calc(1rem + 4vw);
-	font-family: "BNMainz";
-	text-transform: uppercase;
-	letter-spacing: 1rem;
-}
-
 .image {
 	width: 60%;
-}
-
-.caption {
-	font-size: calc(0.7rem + 1vw);
-	font-family: "Nightingale";
-	text-transform: uppercase;
-	letter-spacing: .12rem
+	min-width: 280px;
+	max-width: 700px;
 }
 
 .fade {
@@ -168,23 +156,39 @@ export default {
 .cocktail {
 	width: 30%;
 	min-width: 380px;
+	max-width: 500px;
 	position: absolute;
+	text-align: left;
 	top: 35%;
 	left: -30%;
+	padding-top: 2.5%;
+	padding-bottom: 2.5%;
 	padding-right: 1%;
-	padding-left: 1%;
+	padding-left: 2%;
 	border-radius: 0% 1% 1% 0%;
 	box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .cocktail-mobile {
-	width: 100%;
+	width: 80%;
 	position: relative;
+	padding-top: 2.5%;
+	padding-bottom: 2.5%;
+	padding-right: 10%;
+	padding-left: 10%;
 	margin-top: 5%;
-	padding-right: 1%;
-	padding-left: 1%;
 	border-radius: 0% 1% 1% 0%;
 	box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cocktail-mobile-body {
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.cocktail-mobile-header {
+	margin-bottom: 30px;
+	margin-top: 10px;
 }
 
 .cocktail a {

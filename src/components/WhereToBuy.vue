@@ -2,7 +2,7 @@
   <div class="where-to-buy" id="buy">
     <div class="title">Retailers</div>
     <div class="inner">
-      <div class="text text-title" v-if="retailers.length === 0">
+      <div class="text" v-if="retailers.length === 0">
       Coming soon</div>
       <div class="text" v-for="retailer in retailers" :key="retailer.name">
         <div class="text-title">
@@ -28,22 +28,22 @@ export default {
   data() {
     return {
       retailers: [
-        // {
-        //   name: "Blue Copper 2000",
-        //   address: "401 N 300 W",
-        //   city: "Salt Lake City",
-        //   state: "UT",
-        //   zip: "84103",
-        //   website: "https://bluecopperslc.com/",
-        // },
-        // {
-        //   name: "Blue Copper Coffee Room",
-        //   address: "179 W 900 S",
-        //   city: "Salt Lake City",
-        //   state: "UT",
-        //   zip: "84101",
-        //   website: "https://bluecopperslc.com/",
-        // },
+        {
+          name: "Blue Copper 2000",
+          address: "401 N 300 W",
+          city: "Salt Lake City",
+          state: "UT",
+          zip: "84103",
+          website: "https://bluecopperslc.com/",
+        },
+        {
+          name: "Blue Copper Coffee Room",
+          address: "179 W 900 S",
+          city: "Salt Lake City",
+          state: "UT",
+          zip: "84101",
+          website: "https://bluecopperslc.com/",
+        },
       ],
     };
   },
@@ -57,27 +57,6 @@ export default {
   position: relative;
   background: white;
   text-align: left;
-}
-  .title {
-  font-size: calc(.3rem + 4vw);
-  font-family: "BNMainz";
-  text-transform: uppercase;
-  letter-spacing: 1rem;
-  color: #003b4a;
-  padding-bottom: 1rem;
-}
-.text {
-  font-size: calc(0.2rem + 1vw);
-  font-family: "BNBergen";
-  color: #003b4a;
-  text-transform: uppercase;
-  line-height: 1.5rem;
-	letter-spacing: .1rem;
-}
-
-.text-title {
-  font-size: calc(0.5rem + 1vw);
-  margin-bottom: 15px;
 }
 .spacer {
   height: 1vh;
