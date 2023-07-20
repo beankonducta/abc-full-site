@@ -2,10 +2,12 @@
   <div class="where-to-buy" id="buy">
     <div class="title">Retailers</div>
     <div class="inner">
-      <div class="text" v-if="retailers.length === 0">
+      <div class="text text-title" v-if="retailers.length === 0">
       Coming soon</div>
       <div class="text" v-for="retailer in retailers" :key="retailer.name">
+        <div class="text-title">
         {{ retailer.name }}
+      </div>
         <br />
         {{ retailer.address }}
         <br />
@@ -56,7 +58,7 @@ export default {
   background: white;
   text-align: left;
 }
-.title {
+  .title {
   font-size: calc(.3rem + 4vw);
   font-family: "BNMainz";
   text-transform: uppercase;
@@ -71,6 +73,11 @@ export default {
   text-transform: uppercase;
   line-height: 1.5rem;
 	letter-spacing: .1rem;
+}
+
+.text-title {
+  font-size: calc(0.5rem + 1vw);
+  margin-bottom: 15px;
 }
 .spacer {
   height: 1vh;
