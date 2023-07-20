@@ -226,6 +226,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   text-align: center;
