@@ -234,7 +234,7 @@ body {
   position: relative;
 }
 
-a {
+a, .a {
   color: #ae841f;
   text-decoration: none;
 }
@@ -256,7 +256,7 @@ a:active {
 }
 
 @media screen and (max-width: 1099px) {
-  a {
+  a, .a {
     font-size:.5rem;
   }
 
@@ -300,7 +300,7 @@ a:active {
 
 @media screen and (min-width: 1100px) {
 
-  a {
+  a, .a {
     font-size: 1rem;
   }
   .title {
