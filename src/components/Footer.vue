@@ -38,7 +38,7 @@
   <div class="footer-inner">
     <!-- <img class="footer-img" :src="require('@/assets/images/amphora.svg')" /> -->
       <a class="footer-item" href="mailto:hello@augurybeverage.co"> Contact us</a>
-      <a class="footer-item" href="mailto:hello@augurybeverage.co"> Wholesale Inquiry</a>
+      <a class="footer-item" href="mailto:orders@augurybeverage.co"> Wholesale Inquiry</a>
       <br>
       <p class="a">© {{ year }} Augury Beverage Co. </p>
       <br>
