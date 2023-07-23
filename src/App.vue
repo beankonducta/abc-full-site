@@ -234,9 +234,13 @@ body {
   position: relative;
 }
 
-a, .a {
+a {
   color: #ae841f;
   text-decoration: none;
+}
+
+.a {
+  color: #003b4a;
 }
 
 a:hover {
