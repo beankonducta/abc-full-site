@@ -64,7 +64,6 @@ export default {
   width: 80%;
   margin-bottom: 1vh;
 }
-
 .inner {
     max-height: 1000px;
     overflow-x: hidden;

@@ -48,7 +48,7 @@ export default {
       currentProduct: 0,
       products: [
         {
-          img: require("./assets/images/Khloris Can Mock.png"),
+          img: require("./assets/images/Khloris_WEB.png"),
           title: "Khloris",
           caption: "Floral Herbal Tea with Honey and Mosaic Hops",
           color: "#702E3E",
@@ -70,7 +70,7 @@ export default {
                          Stir over ice and serve in a highball glass. Garnish with lime wheel.`
         },
         {
-          img: require("./assets/images/Mellona Can Mock.png"),
+          img: require("./assets/images/Mellona_WEB.png"),
           title: "Mellona",
           caption: "Earl Grey Tea with Honey",
           color: "#003B4A",
@@ -94,7 +94,7 @@ export default {
                          Stir over ice and serve in a highball glass. Garnish with orange and mint.`
         },
         {
-          img: require("./assets/images/Pomona Can Mock.png"),
+          img: require("./assets/images/Pomona_WEB.png"),
           title: "Pomona",
           caption: "Fruity Green Tea with Honey and Mosaic Hops",
           color: "#1A5632",
@@ -117,27 +117,67 @@ export default {
                          Stir over ice and serve in your favorite glass. Garnish with mint and candied ginger.`
         },
         {
-          img: require("./assets/images/Sparkling Can Mock.png"),
-          title: "Sparkling Water",
-          caption: "Simple, Light and Bubbly Sparkling Water",
-          color: "#415364",
-          bg: "#FFFFFF",
-          icon: require("./assets/images/icon_star.svg"),
+          img: require("./assets/images/Sparkling_Cascara_WEB.png"),
+          title: "Sparkling Water - With Cascara",
+          caption: "Light and Bubbly Sparkling Water with Coffee Cherry Tea",
+          color: "#591a1a",
+          bg: "#e69c84",
+          icon: require("./assets/images/icon_cc.svg"),
+          cocktailHeader: "Cocktail Idea",
+          cocktailBody: `Bourbon Coffee Cherry Soda <br><br>
+                         - 2 oz bourbon <br>
+                         - 6 oz Augury Sparkling Water With Cascara <br>
+                         - Orange Slice <br><br>
+                         Stir over ice and serve in your favorite glass. Garnish with orange slice.`,
+          mocktailHeader: "Mocktail Idea",
+          mocktailBody: `NA Tequila Soda <br><br>
+                         - 2 oz NA bourbon (spiritless is a good brand) <br>
+                         - 6 oz Augury Sparkling Water <br>
+                         - Orange Slice <br><br>
+                         Stir over ice and serve in your favorite glass. Garnish with orange slice.`,
+        },
+        {
+          img: require("./assets/images/Sparkling_Lime_WEB.png"),
+          title: "Sparkling Water - With Lime",
+          caption: "Light and Bubbly Sparkling Water with Lime Juice",
+          color: "#38773a",
+          bg: "#a8d491",
+          icon: require("./assets/images/icon_lime.svg"),
           cocktailHeader: "Cocktail Idea",
           cocktailBody: `Tequila Soda <br><br>
                          - 2 oz blanco tequila <br>
-                         - 6 oz Augury Sparkling Water <br>
+                         - 6 oz Augury Sparkling Water With Lime <br>
                          - Lime Wheel <br><br>
                          Stir over ice and serve in your favorite glass. Garnish with lime wheel.`,
           mocktailHeader: "Mocktail Idea",
           mocktailBody: `NA Tequila Soda <br><br>
                          - 2 oz NA tequila (lyres is a good brand) <br>
-                         - 6 oz Augury Sparkling Water <br>
+                         - 6 oz Augury Sparkling Water With Lime <br>
                          - Lime Wheel <br><br>
                          Stir over ice and serve in your favorite glass. Garnish with lime wheel.`,
         },
         {
-          img: require("./assets/images/Tonic Can Mock.png"),
+          img: require("./assets/images/Sparkling_Grapefruit_WEB.png"),
+          title: "Sparkling Water - With Grapefruit",
+          caption: "Light and Bubbly Sparkling Water with Grapefruit Juice",
+          color: "#ee3e23",
+          bg: "#fcd69a",
+          icon: require("./assets/images/icon_gf.svg"),
+          cocktailHeader: "Cocktail Idea",
+          cocktailBody: `Paloma <br><br>
+                         - 2 oz blanco tequila <br>
+                         - 6 oz Augury Sparkling Water <br>
+                         - Lime Wheel <br><br>
+                         Stir over ice and serve in your favorite glass. Garnish with lime wheel.`,
+          mocktailHeader: "Mocktail Idea",
+          mocktailBody: `Grapefruit Lemon lime Lavender Soda <br><br>
+                         - 4 oz Taproot Lemon Lime Lavender Soda <br>
+                         - 4 oz Augury Sparkling Water <br>
+                         - Lime Wheel <br><br>
+                         Pour over ice and serve in your favorite glass. Garnish with lime wheel.`,
+        },
+        {
+          img: require("./assets/images/Sparkling_Tonic_WEB.png"),
           title: "Tonic Water",
           caption: "Deliciously Crisp Citrus Based Tonic",
           color: "#003B4A",
@@ -216,6 +256,10 @@ export default {
     url("./assets/fonts/BNBergen.woff") format("woff");
 }
 
+h1 {
+  margin-bottom: 20px;
+}
+
 body {
   width: 101vw;
   margin-left: -1vw;
@@ -232,6 +276,7 @@ body {
   text-align: center;
   align-content: center;
   position: relative;
+  
 }
 
 a {
@@ -269,6 +314,7 @@ a:active {
 	font-family: "BNMainz";
 	text-transform: uppercase;
 	letter-spacing: .75rem;
+  margin-bottom: 25px;
   color: #003b4a;
 }
 
@@ -278,6 +324,7 @@ a:active {
 	text-transform: uppercase;
 	letter-spacing: .7rem;
   color: #003b4a;
+  margin-bottom: 25px;
 }
 
 .caption {
@@ -312,6 +359,7 @@ a:active {
 	font-family: "BNMainz";
 	text-transform: uppercase;
 	letter-spacing: 1rem;
+  margin-bottom: 35px;
   color: #003b4a;
 }
 
@@ -321,6 +369,7 @@ a:active {
 	text-transform: uppercase;
 	letter-spacing: .7rem;
   color: #003b4a;
+  margin-bottom: 25px;
 }
 
 .caption {

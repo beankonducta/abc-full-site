@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import tinycolor from "tinycolor2";
+// import tinycolor from "tinycolor2";
 /* eslint-disable */
 export default {
 	name: "Product",
@@ -94,7 +94,7 @@ export default {
 	},
 	computed: {
 		compColor() {
-			return tinycolor(this.color).complement().toHexString();
+			return this.color;
 		},
 		yOffset() {
 			return this.scrollY - this.yPos;
@@ -203,6 +203,7 @@ export default {
 	font-family: "BNMainz";
 	text-transform: uppercase;
 	letter-spacing: 1rem;
+	margin-bottom: 15px;
 }
 
 .cocktail-body {
