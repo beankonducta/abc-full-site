@@ -65,7 +65,7 @@ export default {
           mocktailBody: `Tonic and Tea <br><br>
                          - 3 oz Augury Tonic Water <br>
                          - 1/2 oz lime juice <br>
-                         - 3oz Augury Khloris <br>
+                         - 3 oz Augury Khloris <br>
                          - lime wheel <br><br>
                          Stir over ice and serve in a highball glass. Garnish with lime wheel.`
         },
@@ -130,7 +130,7 @@ export default {
                          - Orange Slice <br><br>
                          Stir over ice and serve in your favorite glass. Garnish with orange slice.`,
           mocktailHeader: "Mocktail Idea",
-          mocktailBody: `NA Tequila Soda <br><br>
+          mocktailBody: `NA Bourbon Soda <br><br>
                          - 2 oz NA bourbon (spiritless is a good brand) <br>
                          - 6 oz Augury Sparkling Water <br>
                          - Orange Slice <br><br>

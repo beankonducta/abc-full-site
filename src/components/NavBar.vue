@@ -2,9 +2,10 @@
   <div class="nav">
     <a @click="scroll('#products')" class="nav-item">Our Drinks</a>
     <a @click="scroll('#about')" class="nav-item">About</a>
+    <a @click="scroll('#contact')" class="nav-item">Contact</a>
     <!-- <a @click="scroll('buy')" class="nav-item" href="#buy">Where To Buy</a> -->
     <!-- <a @click="scroll('contact')" class="nav-item" href="#contact">Contact</a> -->
-    <div class="alc" v-if="alc" @click="switchAlc()" title="Click to swap drink ideas between alcoholic and non alcoholic">
+    <div class="alc" v-if="alc && showCocktail" @click="switchAlc()" title="Click to swap drink ideas between alcoholic and non alcoholic">
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 29.54 29.54"
 					style="enable-background:new 0 0 29.54 29.54;" xml:space="preserve">
@@ -16,7 +17,7 @@
 					</g>
 				</svg>
 			</div>
-			<div class="alc" v-if="!alc" @click="switchAlc()">
+			<div class="alc" v-if="!alc && showCocktail" @click="switchAlc()">
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 29.54 29.54"
 					style="enable-background:new 0 0 29.54 29.54;" xml:space="preserve">
@@ -41,7 +42,8 @@ export default {
   data() {
     return {
       compColor: "#003B4A",
-      alc: true
+      alc: true,
+      showCocktail: false
     };
   },  
   methods: {
@@ -100,5 +102,11 @@ export default {
 
 .nav-item {
   padding: .5rem;
+}
+
+.nav-item:hover,
+.nav-item:active {
+  cursor: pointer;
+  opacity: 0.75;
 }
 </style>

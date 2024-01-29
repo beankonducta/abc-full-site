@@ -14,14 +14,14 @@
 			<img class="image slide-in-can" v-bind:src="img" />
 			<div class="caption" :style="{ color: compColor }">{{ caption }}</div>
 		</div>
-		<div class="cocktail" :style="{ background: this.color }"
+		<div v-if="showCocktail" class="cocktail" :style="{ background: this.color }"
 			:class="[isVisible ? 'slide-in' : 'slide-out', screenWidth <= minWidth ? 'hide' : '']">
 			<div class="subtitle" :style="{color: this.bg, opacity: opacity }">{{ cocktailHeader }}</div>
 			<div class="text" :style="{color: this.bg, opacity: opacity }" v-html="cocktailBody">
 
 			</div>
 		</div>
-		<div class="cocktail-mobile" :style="{ background: this.color}"
+		<div v-if="showCocktail" class="cocktail-mobile" :style="{ background: this.color}"
 			:class="[screenWidth > minWidth ? 'hide' : '']">
 			<div class="subtitle cocktail-mobile-header" :style="{color: this.bg, opacity: opacity }">{{ cocktailHeader }}</div>
 			<div class="text cocktail-mobile-body" :style="{color: this.bg, opacity: opacity }" v-html="cocktailBody">
@@ -53,7 +53,8 @@ export default {
 			isVisible: false,
 			yPos: 0,
 			screenWidth: 0,
-			minWidth: 1100
+			minWidth: 1100,
+			showCocktail: false,
 		};
 	},
 	updated() {
