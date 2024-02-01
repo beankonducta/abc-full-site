@@ -102,6 +102,9 @@ export default {
 
 .nav-item {
   padding: .5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1rem;
 }
 
 .nav-item:hover,

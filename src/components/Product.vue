@@ -6,7 +6,7 @@
 				<path :fill="arrowColor" d="M2.66,0.25C29.78,6.92,53.5,24.17,70.43,48.11c0.79,1.12,2.4,1.12,3.19,0c16.96-23.98,40.73-41.25,67.89-47.9
 	C142.07,0.11,142.92,0,144,0H0C1.2,0,2.12,0.14,2.66,0.25z" />
 			</svg>
-			<img :src="icon" :class="screenWidth <= minWidth ? 'hide' : ''"/>
+			<img class="icon" :src="icon" :class="screenWidth <= minWidth ? 'hide' : ''"/>
 		</div>
 		<div class="product-wrapper fade" :class="[{ visible: isVisible }]" :style="{ opacity: opacity }"
 			:id="`${title.replace(' ', '-')}`">
@@ -132,7 +132,6 @@ export default {
 	padding-bottom: 10vh;
 	position: relative;
 }
-
 .product-wrapper {
 	width: 80%;
 	text-align: center;
@@ -246,6 +245,24 @@ export default {
 .hide {
 	display: none;
 }
+
+.icon {
+	animation: subtle-move 2s infinite;
+}
+
+@keyframes subtle-move {
+	0% {
+		transform: translate(0px, 0px);
+	}
+
+	50% {
+		transform: translate(0px, 5px);
+	}
+
+	100% {
+		transform: translate(0px, 0px);
+	}
+}	
 
 @keyframes slide-in {
 	0% {

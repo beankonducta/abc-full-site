@@ -1,51 +1,44 @@
 <template>
   <div>
-  <div class="footer">
-    <div class="arrow">
-      <svg
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
-        viewBox="0 0 144 48.95"
-        style="enable-background: new 0 0 144 48.95"
-        xml:space="preserve"
-      >
-        <path
-          :fill="arrowColor"
-          d="M2.66,0.25C29.78,6.92,53.5,24.17,70.43,48.11c0.79,1.12,2.4,1.12,3.19,0c16.96-23.98,40.73-41.25,67.89-47.9
-	C142.07,0.11,142.92,0,144,0H0C1.2,0,2.12,0.14,2.66,0.25z"
-        />
-      </svg>
-    </div>
-    <div id="about">
-      <div class="title">about</div>
-      <div class="text">
-        In 2023, we launched Augury Beverage Co. to offer a variety of delightful drinks to Salt Lake Valley and beyond.
-        <br />
-        <br />
-        Our diverse lineup includes bubbly hop-infused teas, refreshing tonics, and sparkling waters, all carefully crafted with handpicked, locally-sourced ingredients.
-        <br />
-        <br />
-        We are dedicated to creating great-tasting beverages without harmful additives. We hope you enjoy our drinks as much as we love making them.
+    <div class="footer">
+      <div class="arrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 144 48.95" style="enable-background: new 0 0 144 48.95" xml:space="preserve">
+          <path :fill="arrowColor" d="M2.66,0.25C29.78,6.92,53.5,24.17,70.43,48.11c0.79,1.12,2.4,1.12,3.19,0c16.96-23.98,40.73-41.25,67.89-47.9
+	C142.07,0.11,142.92,0,144,0H0C1.2,0,2.12,0.14,2.66,0.25z" />
+        </svg>
       </div>
-      
+      <div id="about">
+        <div class="title">about</div>
+        <div class="text">
+          In 2023, we launched Augury Beverage Co. to offer a variety of delightful drinks to Salt Lake Valley and beyond.
+          <br />
+          <br />
+          Our diverse lineup includes bubbly hop-infused teas, refreshing tonics, and sparkling waters, all carefully
+          crafted with handpicked, locally-sourced ingredients.
+          <br />
+          <br />
+          We are dedicated to creating great-tasting beverages without harmful additives. We hope you enjoy our drinks as
+          much as we love making them.
+        </div>
+
+      </div>
+
+      <WhereToBuy id="buy"></WhereToBuy>
     </div>
-    
-    <WhereToBuy id="buy"></WhereToBuy>
+    <div class="footer-inner">
+      <a class="footer-item" id="contact" href="mailto:hello@taprootsoda.com"> Contact us</a>
+      <a class="footer-item" href="mailto:orders@taprootsoda.com">
+        Wholesale Inquiry</a>
+      <br />
+      <p class="a">© {{ year }} Augury Beverage Co.</p>
+      <br />
+      <p class="a">
+        Site by
+        <a target="_blank" href="https://beankonducta.com/">Beankonducta</a>
+      </p>
+    </div>
   </div>
-  <div class="footer-inner">
-    <!-- <img class="footer-img" :src="require('@/assets/images/amphora.svg')" /> -->
-      <a class="footer-item" id="contact" href="mailto:hello@augurybeverage.co"> Contact us</a>
-      <a class="footer-item" href="mailto:orders@augurybeverage.co"> Wholesale Inquiry</a>
-      <br>
-      <p class="a">© {{ year }} Augury Beverage Co. </p>
-      <br>
-      <br>
-      <p class="a">Site by <a target="_blank" href="https://beankonducta.com/">Beankonducta</a></p>
-    </div>
-</div>
 </template>
 
 <script>
@@ -66,7 +59,7 @@ export default {
     year() {
       return new Date().getFullYear();
     },
-  },  
+  },
 };
 </script>
 
@@ -87,7 +80,6 @@ export default {
   padding-top: 2vh;
   margin-top: -2vh;
   margin-bottom: 1vh;
-  font-size: calc(.2rem + 1vw);
   font-family: "BNBergen";
   text-transform: uppercase;
   letter-spacing: .12rem;
@@ -103,15 +95,8 @@ export default {
 }
 
 .footer-item {
-  padding: .5rem;
+  padding: 0.5rem;
   margin-bottom: 0;
-}
-
-#contact {
-  font-size: calc(0.4rem + 1vw);
-  font-family: "BnBergen";
-  text-transform: uppercase;
-  letter-spacing: 0.12rem;
 }
 
 #about {
@@ -131,5 +116,4 @@ export default {
   left: 1%;
   width: 15%;
 }
-
 </style>
